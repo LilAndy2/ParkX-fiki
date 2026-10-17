@@ -15,6 +15,12 @@ import {
   Mail,
   ArrowRight,
   Menu,
+  Building2,
+  Smartphone,
+  MessagesSquare,
+  CalendarClock,
+  BadgeCheck,
+  Handshake,
 } from "lucide-react";
 import "./index.css";
 
@@ -61,7 +67,7 @@ const business = [
   {
     title: "Competition",
     icon: Target,
-    text: "Public parking, parking garages, parking apps, and other peer-to-peer parking marketplaces.",
+    text: "Public parking, parking garages, parking apps, and other peer-to-peer parking marketplaces. See the Competition chapter for the Bucharest landscape.",
   },
   {
     title: "Differentiation",
@@ -72,6 +78,140 @@ const business = [
     title: "Cost structure",
     icon: Wallet,
     text: "Hosting, maps, payment processing, development, maintenance, customer support, and marketing.",
+  },
+];
+
+const competitors = [
+  {
+    name: "Parking București",
+    type: "Municipal street-parking app",
+    icon: Smartphone,
+    what: "The official app of Compania Municipală Parking București for paying public street parking (5 lei/hour, no commission). Since 27 February 2026, parking in the city-run zones can only be paid digitally.",
+    gap: "Only covers public street spots. Payment does not guarantee a free spot, so drivers still have to search for one.",
+    sources: [
+      [
+        "bucuresti.ro – Parking in Bucharest in 2026",
+        "https://www.bucuresti.ro/articole/parcare-in-bucuresti-in-2026-zone-tarife-aplicatii-si-cum-eviti-amenzile-1336",
+      ],
+      [
+        "Jurnalul – new rules from 27 Feb 2026",
+        "https://jurnalul.ro/stiri/locale/parcarea-bucuresti-plata-digitala-reguli-noi-2026-concedieri-1025491.html",
+      ],
+      [
+        "News București – app features",
+        "https://newsbucuresti.ro/plata-parcarii-in-bucuresti-direct-din-aplicatie-ce-functii-pot-folosi-soferii/",
+      ],
+    ],
+  },
+  {
+    name: "AmParcat",
+    type: "Private street-parking payment app",
+    icon: Smartphone,
+    what: "The best-known private alternative for paying public parking in Bucharest and 20+ other cities, with Apple Pay, Google Pay, Revolut Pay, automatic extension and extras such as insurance for the parking period.",
+    gap: "Like the city app, it is a payment tool for street parking. It does not add new spaces or allow reservations.",
+    sources: [
+      ["amparcat.ro", "https://amparcat.ro/"],
+      [
+        "AmParcat – Bucharest zones & fees",
+        "https://amparcat.ro/oras/bucuresti/",
+      ],
+      [
+        "Google Play – AmParcat",
+        "https://play.google.com/store/apps/details?id=com.tapptitude.amparcat",
+      ],
+    ],
+  },
+  {
+    name: "Interparking & commercial garages",
+    type: "Parking operators",
+    icon: Building2,
+    what: "Underground and multi-storey car parks (e.g. Piața Universității) and mall or office garages, paid by the hour.",
+    gap: "Fixed, central locations with operator pricing. Little coverage in residential neighbourhoods, where demand is high in the evening.",
+    sources: [
+      [
+        "Interparking – Piața Universității",
+        "https://www.interparking.ro/en/parkings/bucharest/piata-universitatii/",
+      ],
+    ],
+  },
+  {
+    name: "ParkApp.ro",
+    type: "Parking rental listings",
+    icon: MapPin,
+    what: "A map of private parking spaces and garages for rent in Bucharest and 30+ other cities, free to use, with direct contact with the owner. Bucharest listings are priced per month.",
+    gap: "Monthly rentals only. No hourly booking or in-app payment, and the details are negotiated directly between people.",
+    sources: [["parkapp.ro", "https://www.parkapp.ro/"]],
+  },
+  {
+    name: "yeParking",
+    type: "Parksharing app",
+    icon: Users,
+    what: "A Romanian app where drivers share their parking spots for minutes or hours. It is active mainly in Cluj, Brașov, Oradea and Iași, and also sells smart-barrier systems for car parks.",
+    gap: "Built around community sharing rather than a paid hourly marketplace, with little presence in Bucharest. Its 2021 Bucharest pilot for residential complexes has had no recent coverage.",
+    sources: [
+      [
+        "Google Play – yeParking",
+        "https://play.google.com/store/apps/details?id=ro.digitalrepublic.yeparking",
+      ],
+      [
+        "App Store – yeParking",
+        "https://apps.apple.com/ro/app/yeparking/id1352934626?l=ro",
+      ],
+      [
+        "Economica.net – Bucharest pilot (2021)",
+        "https://www.economica.net/aplicatia-prin-care-inchiriezi-locul-de-parcare-ar-putea-fi-disponibila-si-pentru-locurile-din-cladirile-de-birouri-din-bucuresti_196631.html",
+      ],
+    ],
+  },
+  {
+    name: "Facebook groups, OLX, AnuntParcari",
+    type: "Informal classifieds",
+    icon: MessagesSquare,
+    what: "Where most private parking spots in Bucharest are rented today, through posts and ads for monthly or long-term use.",
+    gap: "No verification, no booking calendar, no secure payment, and no short-term use.",
+    sources: [
+      [
+        "OLX – parking spots for rent, Bucharest",
+        "https://www.olx.ro/imobiliare/paracari-si-garaje/bucuresti/q-inchiriez-loc-parcare/",
+      ],
+      [
+        "AnuntParcari.ro – Bucharest",
+        "https://anuntparcari.ro/parcari-bucuresti",
+      ],
+    ],
+  },
+];
+
+const advantages = [
+  {
+    icon: CalendarClock,
+    title: "Hourly, not only monthly",
+    text: "Owners publish the exact hours their space is free (e.g. weekdays 9–18 while they are at work). Drivers book just the hours they need.",
+  },
+  {
+    icon: ParkingCircle,
+    title: "A guaranteed spot, not a hunt",
+    text: "Unlike street-parking apps, a ParkX booking reserves a specific space, so the driver knows where they will park before leaving.",
+  },
+  {
+    icon: Wallet,
+    title: "Payment handled in the app",
+    text: "Booking and payment happen in one flow. Owners are paid automatically, with no cash and no negotiation as in classifieds and groups.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Trust between strangers",
+    text: "Verified listings, ratings for drivers and owners, and clear access instructions. This is what informal groups lack.",
+  },
+  {
+    icon: Handshake,
+    title: "New supply in residential areas",
+    text: "We unlock idle private spaces in apartment complexes, houses and offices, the neighbourhoods garages and street parking don't cover well.",
+  },
+  {
+    icon: Target,
+    title: "Built for Bucharest",
+    text: "Focused on Bucharest, where demand is high and street spots are scarce, rather than being a generic international platform.",
   },
 ];
 
@@ -103,6 +243,7 @@ function Header() {
             ["#about", "Overview"],
             ["#team", "Team"],
             ["#business", "Business model"],
+            ["#competition", "Competition"],
             ["#milestones", "Milestones"],
           ].map(([href, label]) => (
             <a
@@ -319,10 +460,85 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="milestones" className="section">
+        <section id="competition" className="section">
           <div className="mx-auto max-w-6xl px-5">
             <SectionHeading
-              tag="04 / Project journey"
+              tag="04 / Competition"
+              title="Who else helps people park in Bucharest"
+              desc="Bucharest drivers already have several options, but none of them lets you book someone's private parking space by the hour. Here is how ParkX compares."
+            />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {competitors.map(({ name, type, icon: Icon, what, gap, sources }) => (
+                <div key={name} className="glass p-7 flex flex-col">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="bg-white/5 p-2 rounded-xl">
+                      <Icon className="text-slate-300" size={20} />
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-bold leading-tight">
+                        {name}
+                      </h3>
+                      <span className="text-xs text-slate-500">{type}</span>
+                    </div>
+                  </div>
+                  <p className="muted text-sm">{what}</p>
+                  <div className="mt-5 pt-4 border-t border-white/10">
+                    <span className="text-rose-400 text-xs font-bold tracking-widest">
+                      THE GAP
+                    </span>
+                    <p className="text-sm text-slate-300 mt-2">{gap}</p>
+                  </div>
+                  <div className="mt-auto pt-5">
+                    <span className="text-slate-500 text-xs font-bold tracking-widest">
+                      SOURCES
+                    </span>
+                    <ul className="mt-2 space-y-1">
+                      {sources.map(([label, url]) => (
+                        <li key={url}>
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-slate-400 hover:text-mint inline-flex items-center gap-1"
+                          >
+                            {label} <ArrowUpRight size={12} />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="glass p-8 mt-12 border-mint/20">
+              <span className="text-mint text-xs font-bold tracking-widest">
+                WHAT PARKX BRINGS TO THE MARKET
+              </span>
+              <h3 className="text-2xl font-bold mt-4 mb-8">
+                How we stand out
+              </h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+                {advantages.map(({ icon: Icon, title, text }) => (
+                  <div key={title}>
+                    <Icon className="text-mint mb-3" size={24} />
+                    <h4 className="font-bold mb-2">{title}</h4>
+                    <p className="muted text-sm">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p className="text-xs text-slate-500 mt-5">
+              Based on the public sources listed on each card, checked in
+              October 2026. Our differentiation is a hypothesis we will validate with
+              drivers and parking-space owners.
+            </p>
+          </div>
+        </section>
+        <section id="milestones" className="section bg-white/[.02]">
+          <div className="mx-auto max-w-6xl px-5">
+            <SectionHeading
+              tag="05 / Project journey"
               title="Milestones & progress"
               desc="The Fiki grows with each startup engineering milestone. All updates stay on this one page."
             />
