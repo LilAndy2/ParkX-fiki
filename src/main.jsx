@@ -72,7 +72,7 @@ const business = [
   {
     title: "Differentiation",
     icon: ShieldCheck,
-    text: "Focus on unlocking underused private parking inventory with flexible hourly availability. A hypothesis to validate.",
+    text: "Focus on unlocking underused private parking inventory with flexible hourly availability. A hypothesis to validate. See the Differentiation chapter for details.",
   },
   {
     title: "Cost structure",
@@ -244,6 +244,7 @@ function Header() {
             ["#team", "Team"],
             ["#business", "Business model"],
             ["#competition", "Competition"],
+            ["#differentiation", "Differentiation"],
             ["#milestones", "Milestones"],
           ].map(([href, label]) => (
             <a
@@ -511,34 +512,38 @@ function App() {
               ))}
             </div>
 
-            <div className="glass p-8 mt-12 border-mint/20">
-              <span className="text-mint text-xs font-bold tracking-widest">
-                WHAT PARKX BRINGS TO THE MARKET
-              </span>
-              <h3 className="text-2xl font-bold mt-4 mb-8">
-                How we stand out
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-                {advantages.map(({ icon: Icon, title, text }) => (
-                  <div key={title}>
-                    <Icon className="text-mint mb-3" size={24} />
-                    <h4 className="font-bold mb-2">{title}</h4>
-                    <p className="muted text-sm">{text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
             <p className="text-xs text-slate-500 mt-5">
               Based on the public sources listed on each card, checked in
-              October 2026. Our differentiation is a hypothesis we will validate with
-              drivers and parking-space owners.
+              October 2026.
             </p>
           </div>
         </section>
-        <section id="milestones" className="section bg-white/[.02]">
+        <section id="differentiation" className="section bg-white/[.02]">
           <div className="mx-auto max-w-6xl px-5">
             <SectionHeading
-              tag="05 / Project journey"
+              tag="05 / Differentiation"
+              title="What ParkX brings to the market"
+              desc="ParkX fills the gaps the competition leaves: hourly bookings of private spaces, with a guaranteed spot and payment handled in the app."
+            />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {advantages.map(({ icon: Icon, title, text }) => (
+                <div key={title} className="glass p-7">
+                  <Icon className="text-mint mb-5" size={26} />
+                  <h3 className="text-xl font-bold mb-3">{title}</h3>
+                  <p className="muted text-sm">{text}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-slate-500 mt-5">
+              Our differentiation is a hypothesis we will validate with drivers
+              and parking-space owners.
+            </p>
+          </div>
+        </section>
+        <section id="milestones" className="section">
+          <div className="mx-auto max-w-6xl px-5">
+            <SectionHeading
+              tag="06 / Project journey"
               title="Milestones & progress"
               desc="The Fiki grows with each startup engineering milestone. All updates stay on this one page."
             />
