@@ -62,7 +62,7 @@ const business = [
   {
     title: "Customer segments",
     icon: Users,
-    text: "Drivers seeking convenient hourly parking; owners with unused private parking spaces.",
+    text: "Drivers seeking convenient hourly parking; owners with unused private parking spaces. See the Customer segments chapter for details.",
   },
   {
     title: "Competition",
@@ -78,6 +78,51 @@ const business = [
     title: "Cost structure",
     icon: Wallet,
     text: "Hosting, maps, payment processing, development, maintenance, customer support, and marketing.",
+  },
+];
+
+const segments = [
+  {
+    name: "Commuters",
+    side: "Drivers · demand",
+    icon: CarFront,
+    who: "People who drive to work in busy office areas and need a spot for the whole working day.",
+    need: "A reserved spot near the office for fixed hours, cheaper and more predictable than a garage or street parking.",
+  },
+  {
+    name: "Residents & evening visitors",
+    side: "Drivers · demand",
+    icon: Users,
+    who: "Residents and their guests in crowded neighbourhoods, where street spots run out in the evening.",
+    need: "A safe spot for the evening or overnight, close to home, without circling the block.",
+  },
+  {
+    name: "Occasional trips",
+    side: "Drivers · demand",
+    icon: MapPin,
+    who: "Drivers going to the city centre for appointments, events, shopping or a night out.",
+    need: "A spot booked in advance for a few hours, so they know where they will park before leaving.",
+  },
+  {
+    name: "Apartment owners",
+    side: "Space owners · supply",
+    icon: ParkingCircle,
+    who: "People with a private spot in an apartment complex that sits empty while they are at work or away.",
+    need: "Extra income from the spot during the hours they don't use it, with full control over when it is available.",
+  },
+  {
+    name: "House owners",
+    side: "Space owners · supply",
+    icon: Wallet,
+    who: "Owners of houses with a free driveway or garage, especially in central or busy areas.",
+    need: "An easy way to earn from unused space, with verified drivers and payment handled for them.",
+  },
+  {
+    name: "Small businesses & offices",
+    side: "Space owners · supply",
+    icon: Building2,
+    who: "Companies whose parking spaces are full during the day but unused in the evening and at weekends.",
+    need: "Revenue from idle spaces outside working hours, without hiring staff to manage it.",
   },
 ];
 
@@ -243,6 +288,7 @@ function Header() {
             ["#about", "Overview"],
             ["#team", "Team"],
             ["#business", "Business model"],
+            ["#customers", "Customers"],
             ["#competition", "Competition"],
             ["#differentiation", "Differentiation"],
             ["#milestones", "Milestones"],
@@ -461,10 +507,47 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="competition" className="section">
+        <section id="customers" className="section">
           <div className="mx-auto max-w-6xl px-5">
             <SectionHeading
-              tag="04 / Competition"
+              tag="04 / Customer segments"
+              title="Who we build ParkX for"
+              desc="ParkX is a two-sided marketplace: drivers looking for a spot and owners of private spaces that sit empty. These are the main groups on each side."
+            />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {segments.map(({ name, side, icon: Icon, who, need }) => (
+                <div key={name} className="glass p-7 flex flex-col">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="bg-white/5 p-2 rounded-xl">
+                      <Icon className="text-slate-300" size={20} />
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-bold leading-tight">
+                        {name}
+                      </h3>
+                      <span className="text-xs text-slate-500">{side}</span>
+                    </div>
+                  </div>
+                  <p className="muted text-sm">{who}</p>
+                  <div className="mt-5 pt-4 border-t border-white/10">
+                    <span className="text-mint text-xs font-bold tracking-widest">
+                      WHAT THEY NEED
+                    </span>
+                    <p className="text-sm text-slate-300 mt-2">{need}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-slate-500 mt-5">
+              Initial segments based on our assumptions, to be validated
+              through interviews with drivers and parking-space owners.
+            </p>
+          </div>
+        </section>
+        <section id="competition" className="section bg-white/[.02]">
+          <div className="mx-auto max-w-6xl px-5">
+            <SectionHeading
+              tag="05 / Competition"
               title="Who else helps people park in Bucharest"
               desc="Bucharest drivers already have several options, but none of them lets you book someone's private parking space by the hour. Here is how ParkX compares."
             />
@@ -518,10 +601,10 @@ function App() {
             </p>
           </div>
         </section>
-        <section id="differentiation" className="section bg-white/[.02]">
+        <section id="differentiation" className="section">
           <div className="mx-auto max-w-6xl px-5">
             <SectionHeading
-              tag="05 / Differentiation"
+              tag="06 / Differentiation"
               title="What ParkX brings to the market"
               desc="ParkX fills the gaps the competition leaves: hourly bookings of private spaces, with a guaranteed spot and payment handled in the app."
             />
@@ -540,10 +623,10 @@ function App() {
             </p>
           </div>
         </section>
-        <section id="milestones" className="section">
+        <section id="milestones" className="section bg-white/[.02]">
           <div className="mx-auto max-w-6xl px-5">
             <SectionHeading
-              tag="06 / Project journey"
+              tag="07 / Project journey"
               title="Milestones & progress"
               desc="The Fiki grows with each startup engineering milestone. All updates stay on this one page."
             />
