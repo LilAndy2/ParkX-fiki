@@ -26,36 +26,97 @@ import "./index.css";
 
 const team = [
   {
-    name: "Team Member 1",
+    name: "Andrei Manea",
     role: "Project Lead",
-    email: "member1@example.com",
-    photo: "",
+    email: "iulian.andrei.manea@gmail.com",
+    photo: "/public/Andrei M.jpeg",
   },
   {
-    name: "Team Member 2",
-    role: "Frontend Developer",
-    email: "member2@example.com",
-    photo: "",
+    name: "Vanessa Cupșan",
+    role: "UX & User Research Lead",
+    email: "teodoravanessacupsan2004@gmail.com",
+    photo: "/public/Vanessa.jpeg",
   },
   {
-    name: "Team Member 3",
-    role: "Backend Developer",
-    email: "member3@example.com",
-    photo: "",
+    name: "Andrei Lungu",
+    role: "Business & Marketing Analyst",
+    email: "andreitudorlungu01@gmail.com",
+    photo: "/public/Andrei L.jpeg",
   },
   {
-    name: "Team Member 4",
-    role: "Backend Developer",
+    name: "Croitoriu Cosmin",
+    role: "Full Stack Developer",
     email: "member4@example.com",
-    photo: "",
+    photo: "/public/Cosmin.jpeg",
   },
 ];
 
 const metrics = [
-  ["Active parking listings", "Supply"],
-  ["Completed bookings", "Demand"],
-  ["Booking conversion rate", "Product"],
-  ["Platform commission revenue", "Business"],
+  [
+    "Active parking listings",
+    "Supply",
+    "Number of spaces with at least one available time slot in the last 30 days.",
+  ],
+  [
+    "Completed bookings",
+    "Demand",
+    "Number of bookings finished and paid per month.",
+  ],
+  [
+    "Booking conversion rate",
+    "Product",
+    "Completed bookings ÷ searches (or booking attempts).",
+  ],
+  [
+    "Platform commission revenue",
+    "Business",
+    "Completed bookings × average booking value × commission rate.",
+  ],
+  [
+    "Space utilization rate",
+    "Supply",
+    "Booked hours ÷ hours made available by owners.",
+  ],
+  [
+    "Repeat booking rate",
+    "Retention",
+    "Share of drivers who book again within 30 days.",
+  ],
+  [
+    "Average booking value",
+    "Business",
+    "Total paid by drivers ÷ completed bookings.",
+  ],
+  [
+    "Owner and driver rating",
+    "Trust",
+    "Average rating given after each booking.",
+  ],
+];
+
+const revenueStreams = [
+  {
+    icon: Wallet,
+    title: "Driver service fee",
+    text: "A small fixed fee added at checkout to cover payment processing and support.",
+    note: "Risk: it can lower conversion if drivers compare prices.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Featured listings for owners",
+    text: "Owners pay to have their space shown higher in search results, for example in high-demand areas.",
+    note: "Only makes sense once there are enough listings to compete.",
+  },
+  {
+    icon: Building2,
+    title: "Business plan for offices and companies",
+    text: "A monthly subscription for companies that list many spaces, with tools such as bulk availability, reports and a dedicated dashboard.",
+  },
+  {
+    icon: Handshake,
+    title: "Partnerships",
+    text: "Agreements with employers, residential complexes or event venues that offer ParkX bookings to their people or visitors.",
+  },
 ];
 
 const business = [
@@ -444,10 +505,10 @@ function App() {
                   <p className="text-mint text-sm mt-1 mb-4">{p.role}</p>
                   <a
                     href={`mailto:${p.email}`}
-                    className="text-sm text-slate-400 flex items-center gap-2 hover:text-white"
-                  >
-                    <Mail size={15} />
-                    {p.email}
+                      className="text-sm text-slate-400 flex items-start gap-2 hover:text-white"
+                    >
+                      <Mail size={15} className="shrink-0 mt-0.5" />
+                    <span className="min-w-0 break-all">{p.email}</span>
                   </a>
                 </div>
               ))}
@@ -471,14 +532,22 @@ function App() {
               ))}
             </div>
             <div className="glass p-8 mt-5 border-mint/20">
-              <h3 className="text-2xl font-bold mb-3">
+              <span className="text-mint text-xs font-bold tracking-widest">
+                PRIMARY · PLANNED FOR LAUNCH
+              </span>
+              <h3 className="text-2xl font-bold mt-4 mb-3">
                 Revenue stream: commission per booking
               </h3>
               <p className="muted">
-                ParkX earns a percentage of each completed booking. Example
-                only: on a 20 RON booking with a hypothetical 15% commission,
-                the owner receives 17 RON and ParkX receives 3 RON before
-                transaction fees and other costs.
+                ParkX earns a percentage of each completed booking, taken from
+                the amount paid by the driver. The owner receives the rest
+                automatically. This is the core stream because it grows with the
+                number of bookings and only costs the owner when they earn.
+              </p>
+              <p className="muted mt-3">
+                Example only: on a 20 RON booking with a hypothetical 15%
+                commission, the owner receives 17 RON and ParkX receives 3 RON
+                before transaction fees and other costs.
               </p>
               <div className="mt-6 h-4 rounded-full overflow-hidden flex">
                 <div className="bg-mint w-[85%]" />
@@ -486,24 +555,54 @@ function App() {
               </div>
               <div className="flex justify-between mt-3 text-xs text-slate-400">
                 <span>85% owner earnings</span>
-                <span>15% platform commission (example)</span>
+                <span>15% platform commission</span>
               </div>
+            </div>
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold mb-5 flex items-center gap-3">
+                <Wallet className="text-mint" /> Secondary revenue streams
+              </h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {revenueStreams.map(({ icon: Icon, title, text, note }) => (
+                  <div key={title} className="glass p-5 flex flex-col">
+                    <Icon className="text-mint mb-4" size={22} />
+                    <span className="text-xs text-slate-500 font-bold tracking-widest">
+                      HYPOTHESIS
+                    </span>
+                    <h4 className="font-semibold mt-2">{title}</h4>
+                    <p className="muted text-sm mt-2">{text}</p>
+                    {note && (
+                      <p className="text-xs text-slate-500 mt-3">{note}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-slate-500 mt-5">
+                Only the commission is planned for launch; the other streams are
+                options to test after we reach enough listings and bookings.
+              </p>
             </div>
             <div className="mt-12">
               <h3 className="text-2xl font-bold mb-5 flex items-center gap-3">
                 <ChartNoAxesCombined className="text-mint" /> Key metrics
               </h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {metrics.map(([name, type]) => (
+                {metrics.map(([name, type, how]) => (
                   <div key={name} className="glass p-5">
                     <span className="text-xs text-mint">{type}</span>
                     <h4 className="font-semibold mt-3">{name}</h4>
-                    <p className="text-xs text-slate-500 mt-2">
-                      To be tracked after launch
+                    <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+                      {how}
                     </p>
                   </div>
                 ))}
               </div>
+              <p className="text-xs text-slate-500 mt-5">
+                Illustrative example only: 1,000 completed bookings per month at
+                an average of 20 RON and a 15% commission would generate 3,000
+                RON in commission revenue, before transaction fees and other
+                costs. Metrics will be tracked after launch.
+              </p>
             </div>
           </div>
         </section>
