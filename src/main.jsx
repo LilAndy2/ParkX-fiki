@@ -29,25 +29,25 @@ const team = [
     name: "Andrei Manea",
     role: "Project Lead",
     email: "iulian.andrei.manea@gmail.com",
-    photo: "/public/Andrei M.jpeg",
+    photo: "/Andrei M.jpeg",
   },
   {
     name: "Vanessa Cupșan",
     role: "UX & User Research Lead",
     email: "teodoravanessacupsan2004@gmail.com",
-    photo: "/public/Vanessa.jpeg",
+    photo: "/Vanessa.jpeg",
   },
   {
     name: "Andrei Lungu",
     role: "Business & Marketing Analyst",
     email: "andreitudorlungu01@gmail.com",
-    photo: "/public/Andrei L.jpeg",
+    photo: "/Andrei L.jpeg",
   },
   {
     name: "Croitoriu Cosmin",
     role: "Full Stack Developer",
     email: "member4@example.com",
-    photo: "/public/Cosmin.jpeg",
+    photo: "/Cosmin.jpeg",
   },
 ];
 
