@@ -76,35 +76,31 @@ export default function MilestoneTwo() {
           <SectionHeading
             tag="01 / Starting point"
             title="How we identified the problem"
-            desc="Document the observations that led to the problem hypothesis. The statements below are prompts to complete with your own sources, not claims that research has already confirmed."
+            desc="Our initial problem hypothesis came from the parking situation in Bucharest and a review of existing parking services."
           />
-          <div className="grid md:grid-cols-2 gap-5">
-            <article className="glass p-7">
-              <span className="text-mint text-xs font-bold tracking-widest">
-                INITIAL PROBLEM HYPOTHESIS
-              </span>
-              <p className="muted mt-4">
-                Drivers may have difficulty finding a convenient, reliable
-                parking spot when and where they need one, while privately
-                owned spaces may sit unused for some hours. Discovery must test
-                whether this is frequent and important for specific people.
-              </p>
-            </article>
-            <article className="glass p-7">
-              <span className="text-mint text-xs font-bold tracking-widest">
-                RECORD YOUR ORIGIN AND EVIDENCE
-              </span>
-              <ul className="muted mt-4 space-y-2 text-sm">
-                <li>What observation, experience, or source raised this problem?</li>
-                <li>Who was affected, where, and in what situation?</li>
-                <li>What evidence existed before customer interviews?</li>
-                <li>Which parts were assumptions that still needed testing?</li>
-              </ul>
-              <p className="text-xs text-slate-500 mt-5">
-                Add dates, source links, photos or notes where appropriate in
-                the evidence section below.
-              </p>
-            </article>
+          <div className="glass p-7 md:p-9">
+            <p className="muted">
+              We began with a familiar challenge in Bucharest: finding a
+              convenient parking space, particularly in busy areas. Drivers
+              may spend time searching for a spot, while privately owned
+              parking spaces can remain unused during parts of the day.
+            </p>
+            <p className="muted mt-4">
+              During Milestone 1, we reviewed existing services, including
+              Parking București, AmParcat, ParkApp.ro and yeParking. Our review
+              suggested that some services focus on paying for public parking,
+              while private-space rental options may be oriented toward longer
+              rental periods. This highlighted a possible gap for short-term
+              parking in privately owned spaces.
+            </p>
+            <p className="muted mt-4">
+              This desk research helped us form the hypothesis that drivers
+              looking for short-term parking could be connected with owners
+              whose spaces are temporarily unused. It has not yet established
+              how often people experience this problem, how important it is to
+              them, or whether they would seek an alternative. Those questions
+              need to be tested directly with potential customers.
+            </p>
           </div>
         </div>
       </section>
@@ -113,15 +109,26 @@ export default function MilestoneTwo() {
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
             tag="02 / Hypothesis"
-            title="What we thought could solve it"
-            desc="Describe the proposed solution as a hypothesis—not as a validated need. Do not lead with this idea during problem interviews."
+            title="Our initial solution"
+            desc="ParkX is our proposed response to the opportunity identified in our initial research. It remains a hypothesis to test with customers."
           />
           <div className="glass p-7 md:p-9 border-mint/20">
-            <p className="text-slate-200 leading-relaxed">
-              Initial solution hypothesis: a marketplace where drivers can
-              discover and reserve privately owned parking spaces by the hour,
-              with owners choosing when their spaces are available and booking
-              and payment handled in the service.
+            <p className="muted">
+              We propose ParkX as a peer-to-peer marketplace connecting
+              drivers with owners of privately owned parking spaces. Drivers
+              would be able to find spaces near their destination, reserve a
+              space for specific hours and pay through the platform. Owners
+              would be able to list their spaces, set their availability and
+              earn income when those spaces are not in use.
+            </p>
+            <p className="muted mt-4">
+              The proposed business model earns a commission on each completed
+              booking. The intention is to create value for both sides: more
+              convenient short-term parking for drivers and potential income
+              from otherwise idle space for owners. We believe this could make
+              better use of existing parking infrastructure, but these benefits
+              and assumptions still need to be tested through customer
+              discovery.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-7">
               {[
@@ -145,14 +152,32 @@ export default function MilestoneTwo() {
           <SectionHeading
             tag="03 / Plan"
             title="Customer discovery plan"
-            desc="Short overview: learn about recent parking experiences without pitching; compare patterns across driver and owner segments; only then explore whether the proposed solution addresses a proven need; document evidence and decide whether further validation is justified."
+            desc="Our objective is to learn whether the parking problem is real, how significantly it affects potential customers and whether ParkX could address needs they actually have."
           />
+          <div className="glass p-7 md:p-9 mb-5">
+            <span className="text-mint text-xs font-bold tracking-widest">
+              SHORT OVERVIEW
+            </span>
+            <p className="muted mt-4">
+              We will investigate two groups: drivers looking for convenient
+              parking and owners of private spaces that are unused at certain
+              times. We plan to use face-to-face or online interviews and
+              questionnaires, recruiting through personal networks, online
+              communities and other relevant channels. We will first ask about
+              past experiences and current workarounds without presenting
+              ParkX; only after exploring the problem will we introduce the
+              concept and ask for feedback. We will then compare responses
+              across segments, identify patterns and gaps, and use the evidence
+              to refine the product and decide whether customer validation is
+              appropriate.
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              ["1. Define", "Write down the riskiest problem assumptions and the customer segments to investigate."],
-              ["2. Recruit", "Reach people who recently experienced the situation, not only friends who want to be supportive."],
-              ["3. Learn", "Conduct neutral, experience-based interviews; capture exact notes and evidence with consent."],
-              ["4. Decide", "Synthesize recurring and disconfirming evidence; update the product and readiness decision."],
+              ["1. Select segments", "Explore drivers such as commuters, residents and occasional visitors, alongside different types of private-space owners."],
+              ["2. Recruit participants", "Use personal networks, online communities and other relevant channels to reach people in the selected groups."],
+              ["3. Collect information", "Use interviews and questionnaires to ask about past experiences, existing solutions, frustrations, expectations and concerns."],
+              ["4. Analyze and decide", "Compare responses across segments, identify recurring patterns and use the findings to refine ParkX and assess readiness for validation."],
             ].map(([title, text]) => (
               <article key={title} className="glass p-6">
                 <h3 className="font-bold text-lg">{title}</h3>
@@ -161,16 +186,19 @@ export default function MilestoneTwo() {
             ))}
           </div>
           <div className="glass p-7 mt-5">
-            <h3 className="font-bold text-lg">Before starting, record</h3>
+            <h3 className="font-bold text-lg">Problem first, solution second</h3>
             <p className="muted text-sm mt-3">
-              Research dates and location · interviewer(s) · target number of
-              conversations and rationale · recruitment channels · consent and
-              privacy approach · note-taking owner · how responses will be
-              grouped and compared.
+              During the first part of each conversation, we will focus on
+              participants' own experiences, how they currently address
+              parking needs and what difficulties they encounter. We will
+              introduce ParkX only after this problem discussion, so feedback
+              about our idea does not influence how participants describe the
+              problem.
             </p>
             <p className="text-xs text-slate-500 mt-4">
-              Fill in the actual plan and dates; do not report proposed targets
-              as completed research.
+              This describes the planned process. Record completed interviews,
+              questionnaire responses, dates and supporting evidence in the
+              research sections below once the activities have taken place.
             </p>
           </div>
         </div>
