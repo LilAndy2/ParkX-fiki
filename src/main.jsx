@@ -14,7 +14,6 @@ import {
   Clock3,
   Mail,
   ArrowRight,
-  Menu,
   Building2,
   Smartphone,
   MessagesSquare,
@@ -44,10 +43,10 @@ const team = [
     photo: "/Andrei L.jpeg",
   },
   {
-    name: "Croitoriu Cosmin",
+    name: "Boșoagă Costin",
     role: "Full Stack Developer",
-    email: "member4@example.com",
-    photo: "/Cosmin.jpeg",
+    email: "costin.bosoaga@stud.acs.upb.ro",
+    photo: "/Costin.jpg",
   },
 ];
 
@@ -321,11 +320,20 @@ const advantages = [
   },
 ];
 
-function Header() {
-  const [open, setOpen] = React.useState(false);
+const milestones = Array.from({ length: 9 }, (_, index) => index + 1);
+
+function getMilestoneFromUrl() {
+  const milestone = Number(new URLSearchParams(window.location.search).get("milestone"));
+  return milestones.includes(milestone) ? milestone : 1;
+}
+
+function Header({ activeMilestone, onMilestoneChange }) {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-night/90 backdrop-blur-xl">
-      <nav className="mx-auto max-w-6xl px-5 h-20 flex items-center justify-between">
+      <nav
+        aria-label="Project milestones"
+        className="mx-auto max-w-6xl px-5 h-20 flex items-center gap-6"
+      >
         <a
           href="#top"
           className="brand text-2xl font-bold flex items-center gap-2"
@@ -335,33 +343,21 @@ function Header() {
           </span>
           Park<span className="text-mint -ml-2">X</span>
         </a>
-        <button
-          className="md:hidden"
-          aria-label="Toggle menu"
-          onClick={() => setOpen(!open)}
-        >
-          <Menu />
-        </button>
-        <div
-          className={`${open ? "flex" : "hidden"} md:flex absolute md:static top-20 left-0 right-0 bg-night md:bg-transparent p-5 md:p-0 flex-col md:flex-row gap-5 md:gap-8 text-sm text-slate-300`}
-        >
-          {[
-            ["#about", "Overview"],
-            ["#team", "Team"],
-            ["#business", "Business model"],
-            ["#customers", "Customers"],
-            ["#competition", "Competition"],
-            ["#differentiation", "Differentiation"],
-            ["#milestones", "Milestones"],
-          ].map(([href, label]) => (
-            <a
-              key={href}
-              href={href}
-              onClick={() => setOpen(false)}
-              className="hover:text-mint transition"
+        <div className="flex-1 min-w-0 flex items-center justify-between gap-5 overflow-x-auto text-sm text-slate-300">
+          {milestones.map((milestone) => (
+            <button
+              key={milestone}
+              type="button"
+              aria-current={activeMilestone === milestone ? "step" : undefined}
+              onClick={() => onMilestoneChange(milestone)}
+              className={`shrink-0 whitespace-nowrap transition hover:text-mint ${
+                activeMilestone === milestone
+                  ? "font-bold text-mint"
+                  : ""
+              }`}
             >
-              {label}
-            </a>
+              Milestone {milestone}
+            </button>
           ))}
         </div>
       </nav>
@@ -380,11 +376,35 @@ function SectionHeading({ tag, title, desc }) {
   );
 }
 function App() {
+  const [activeMilestone, setActiveMilestone] = React.useState(
+    getMilestoneFromUrl,
+  );
+
+  React.useEffect(() => {
+    const handlePopState = () => setActiveMilestone(getMilestoneFromUrl());
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  function selectMilestone(milestone) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("milestone", milestone);
+    url.hash = "";
+    window.history.pushState(null, "", url);
+    setActiveMilestone(milestone);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <>
-      <Header />
+      <Header
+        activeMilestone={activeMilestone}
+        onMilestoneChange={selectMilestone}
+      />
       <main id="top">
-        <section className="relative overflow-hidden">
+        {activeMilestone === 1 ? (
+          <>
+            <section className="relative overflow-hidden">
           <div className="absolute right-[-120px] top-[-140px] w-[520px] h-[520px] rounded-full bg-mint/10 blur-[110px] pointer-events-none" />
           <div className="mx-auto max-w-6xl px-5 pt-24 pb-24 md:pt-36 md:pb-36 relative">
             <span className="pill">STARTUP ENGINEERING · MILESTONE 1</span>
@@ -722,7 +742,7 @@ function App() {
             </p>
           </div>
         </section>
-        <section id="milestones" className="section bg-white/[.02]">
+            <section id="milestones" className="section bg-white/[.02]">
           <div className="mx-auto max-w-6xl px-5">
             <SectionHeading
               tag="07 / Project journey"
@@ -765,7 +785,22 @@ function App() {
               </div>
             </div>
           </div>
-        </section>
+            </section>
+          </>
+        ) : (
+          <section className="section min-h-[60vh] flex items-center">
+            <div className="mx-auto max-w-6xl w-full px-5">
+              <span className="pill">STARTUP ENGINEERING · MILESTONE {activeMilestone}</span>
+              <h1 className="section-title mt-7">
+                Milestone {activeMilestone}
+              </h1>
+              <p className="muted max-w-2xl">
+                Content for this milestone will be added when its requirements
+                are available.
+              </p>
+            </div>
+          </section>
+        )}
       </main>
       <footer className="border-t border-white/10">
         <div className="max-w-6xl mx-auto px-5 py-9 flex flex-col sm:flex-row justify-between gap-3 text-sm text-slate-400">
