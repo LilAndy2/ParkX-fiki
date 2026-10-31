@@ -344,8 +344,8 @@ export default function MilestoneTwo() {
                 "Channels: personal network (Andrei L / Andrei M) and Vanessa’s screening form → WhatsApp interviews",
                 "Eligibility: recent Bucharest parking struggle and/or control of a private spot",
                 `${interviewStats.total} conversations completed (30–31 Oct 2026)`,
-                "Methods mix: 4 audio + 4 WhatsApp message interviews",
-                "IDs used on this page: A-Andra, A-Cristina, A-Denis, A-Lorena, W-George, W-P1, W-P2, W-P3",
+                `Methods mix: ${interviewStats.audio} audio + ${interviewStats.whatsapp} WhatsApp message interviews`,
+                "Participants are anonymized in the interview evidence cards",
                 "Limitation: convenience sample via team networks; not statistically representative",
               ].map((item) => (
                 <p key={item} className="rounded-xl bg-white/[.035] p-4 text-slate-300">
@@ -376,7 +376,7 @@ export default function MilestoneTwo() {
             <article className="glass p-6 border-mint/20">
               <h3 className="font-bold">WhatsApp message interviews (used)</h3>
               <p className="muted text-sm mt-3">
-                George, Persoana 1–3. Chat screenshots + PDF transcripts under{" "}
+                George, Persoana 1–4. Chat screenshots + PDF transcripts under{" "}
                 <code className="text-slate-300">Conversatii mesaje/</code>.
                 Vanessa’s interviews started from a short screening form.
               </p>
@@ -428,7 +428,7 @@ export default function MilestoneTwo() {
           <SectionHeading
             tag="04.3 / Results"
             title="Findings"
-            desc="Patterns from the 8 interviews. Quotes and details live in the evidence cards; IDs below show independent sources."
+            desc={`Patterns from ${interviewStats.total} interviews. Quotes and details live in the evidence cards; participant labels show independent sources.`}
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
@@ -438,11 +438,11 @@ export default function MilestoneTwo() {
               ],
               [
                 "Searching is a recurring cost",
-                "Drivers independently described 10–25 minute searches near home or destination (Denis, Lorena, George, W-P1, W-P2). Early arrival or weekends can be easier (Lorena, W-P1).",
+                "Drivers independently described 10–25 minute searches near home or destination (Denis, Lorena, George, W-P1, W-P2, W-P4). One recent central-Bucharest trip took about 20 minutes to find parking (W-P4). Early arrival or weekends can be easier (Lorena, W-P1).",
               ],
               [
                 "Workarounds already exist",
-                "Paid lots under time pressure, metro/Bolt/Uber instead of driving, leaving earlier, blocking cars with a phone number in Regie (W-P1), informal monthly rentals via neighbors/colleagues.",
+                "Paid lots under time pressure, metro/Bolt/Uber instead of driving, leaving earlier, blocking cars with a phone number in Regie (W-P1), informal monthly rentals via neighbors/colleagues. W-P4 estimates 80–100 lei monthly on parking, plus Bolt rides to avoid searching.",
               ],
               [
                 "Informal rental market is trust-based",
@@ -450,7 +450,7 @@ export default function MilestoneTwo() {
               ],
               [
                 "Owner blockers for hourly P2P",
-                "Barrier/remote access, stranger risk, admin/rules, overtime/overstay, and reclaiming access (Andra, Cristina, W-P3). Andra prefers one stable daytime tenant; W-P3 will not hand remotes to non-residents.",
+                "Barrier/remote access, stranger risk, admin/rules, overtime/overstay, and reclaiming access (Andra, Cristina, W-P3, W-P4). W-P4 would lend the spot to a trusted neighbor but worries about strangers, damage, and returning before a booking ends.",
               ],
               [
                 "Price & commitment signals",
@@ -481,7 +481,7 @@ export default function MilestoneTwo() {
           <SectionHeading
             tag="05 / Product impact"
             title="How discovery changed the product"
-            desc="Evidence → decision chain for ParkX after the 8 interviews."
+            desc={`Evidence → decision chain for ParkX after ${interviewStats.total} interviews.`}
           />
           <div className="grid md:grid-cols-3 gap-4">
             {[

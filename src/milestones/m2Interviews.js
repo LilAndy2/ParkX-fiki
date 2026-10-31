@@ -158,6 +158,74 @@ export const interviews = [
       "Past tenant kept using a spot after canceling while owner was abroad; now retrieves remotes quickly"
     ],
     "transcript": "Vanessa: Bună ziua! Sunt studentă la Politehnica București și fac un studiu legat de situația locurilor de parcare din București. Aveți timp să vă pun niște întrebări legate de acest subiect? Persoana 3: Bună! Da. Vanessa: În ce zonă a Bucureștiului locuiți?\n\nPersoana 3: În Sectorul 2. Vanessa: Aveți un loc de parcare propriu la reședința dumneavoastră? Persoana 3: Da. Am un loc de parcare privat în cartierul în care stau. Dar dețin și alte locuri de parcare în București. Vanessa: Câte locuri dețineți în total și în ce zone sunt?\n\nPersoana 3: Nu știu numărul exact. Am două locuri în Grozăvești, în Regie Residence, unul în Exigent la Lujerului și mai am niște apartamente cu loc de parcare pe la Uverturii. Vanessa: Toate aceste locuri sunt private, nu?\n\nPersoana 3: Da. Vanessa: Acestea vin împreună cu apartamente pe care le dați în chirie? Persoana 3: Da, doar că pe câteva dintre ele nu am reușit să le închiriez pentru că chiriașii nu au mașină. Momentan stau goale. Mai parchez eu pe ele când vin după chirie.\n\nVanessa: Am înțeles. Și v-ați gândit la vreo soluție astfel încât acestea să nu mai stea goale? Persoana 3: Am vorbit la asociații să se pună un afiș în caz că vrea cineva care stă în cartier să închirieze locul. Momentan aștept să fiu contactată.\n\nVanessa: De cât timp aproximativ stau aceste locuri goale? Persoana 3: La unul din Grozăvești de puțin timp, pentru că doar ce s-au mutat în octombrie niște tineri. Aș mai avea un loc liber la Uverturii care stă așa de vreo câteva luni. Eu zic că se vor lua cât de curând.\n\nVanessa: Am înțeles. Cu ce preț închiriați aceste locuri de parcare? Persoana 3: 50 de euro pe lună. Vanessa: Ați încercat să anunțați și altundeva? OLX, Storia sau alte site-uri / aplicații? Persoana 3: Nu. Cel mai ușor a fost soluția cu afișul. În cei de pe OLX și Storia nu am încredere. Dacă nu locuiesc în cartierul ăla, nu au ce face cu locul de parcare, pentru că le trebuie telecomanda și nu dau telecomanda cuiva care nu stă în cartier.\n\nVanessa: Înțeleg. V-a creat cineva probleme vreodată cu un loc de parcare? Persoana 3: Am mai avut probleme. Am avut odată un chiriaș care a plătit câteva luni locul de parcare, după care a zis că nu mai are nevoie de el. Eu eram plecată cu soțul în străinătate o perioadă mai lungă și nu am putut să iau telecomanda de la el. Până am luat eu telecomanda, am aflat că el tot folosea locul de parcare pe gratis.\n\nVanessa: Cum ați aflat? Persoana 3: Aveam niște chiriași cu care mă înțelegeam bine. M-au întrebat dacă pot să le împrumut două săptămâni locul de parcare pentru un prieten care vine în vizită. Le- am zis că da și apoi m-au contactat să îmi zică că locul era deja ocupat fix de celălalt chiriaș.\n\nVanessa: Ce faceți diferit de atunci când închiriați un loc? Persoana 3: Mă asigur că vin după telecomandă cât de repede pot. Vanessa: Pentru cele două săptămâni ați cerut bani sau ați dat locul gratis? Persoana 3: Nu le-am cerut nimic. Erau chiriașii mei de ani buni de zile. Nu mă zgârcesc la bani pentru două săptămâni.\n\nVanessa: V-a mai cerut cineva locuri de parcare pentru perioade scurte? Persoana 3: Da. Au mai venit tineri să mă întrebe dacă prietenii lor pot să parcheze peste noapte. Le-am zis că există locuri de parcare pentru vizitatori în complex.\n\nVanessa: Locurile de vizitatori sunt de obicei libere? Persoana 3: Nu știu să îți zic. Nu știu nici unde sunt, sinceră să fiu. Știu doar că există. Vanessa: Mulțumesc că mi-ați răspuns la întrebări! Mai e ceva legat de locurile de parcare care vă dă bătăi de cap și nu v-am întrebat?\n\nPersoana 3: Cu drag! Nu cred. Seară frumoasă să ai! Vanessa: La fel!"
+  },
+  {
+    "id": "W-P4",
+    "displayName": "Persoana 4",
+    "method": "whatsapp",
+    "segment": "Owner and driver — private parking spot in Drumul Taberei; drives into central Bucharest",
+    "side": "both",
+    "date": "31 Oct 2026",
+    "interviewer": "Vanessa",
+    "audio": null,
+    "pdf": "/evidence/m2/Conversatii mesaje/Pers4_Vanessa/Interviu_4.pdf",
+    "screenshots": [
+      "/evidence/m2/Conversatii mesaje/Pers4_Vanessa/poza1.jpeg",
+      "/evidence/m2/Conversatii mesaje/Pers4_Vanessa/poza2.jpeg",
+      "/evidence/m2/Conversatii mesaje/Pers4_Vanessa/poza3.jpeg",
+      "/evidence/m2/Conversatii mesaje/Pers4_Vanessa/poza4.jpeg",
+      "/evidence/m2/Conversatii mesaje/Pers4_Vanessa/poza5.jpeg",
+      "/evidence/m2/Conversatii mesaje/Pers4_Vanessa/poza6.jpeg"
+    ],
+    "highlights": [
+      "Recent central-Bucharest trip: searched for about 20 minutes, then paid ~30 lei to park near Universitate",
+      "Often takes Bolt or goes to an underground car park to avoid searching; estimates 80–100 lei monthly parking spend plus rides",
+      "Own spot is occupied while commuting by metro; would only lend it to someone trusted and worries about overstay, damage, and returning home to find it occupied",
+      "An unauthorized driver once occupied the spot for about 40 minutes; considered installing a retractable bollard costing ~300–400 lei"
+    ],
+    "transcript": `Vanessa: Buna! Am văzut că ai completat formularul nostru despre parcare. Ai vreo 10 minute să-ți pun niște întrebări?
+Participant: Salut! Da, sigur, zi.
+
+Vanessa: În ce zonă stai și unde îți lași mașina acasă?
+Participant: Stau în Drumul Taberei. Am loc de parcare al meu în spatele blocului, l-am cumpărat odată cu apartamentul acum trei ani.
+
+Vanessa: Cât de des ieși cu mașina prin oraș și unde mergi de obicei?
+Participant: La birou merg cu metroul, că lucrez în Pipera și e coșmar cu mașina. Cu mașina ies mai mult seara și în weekend prin centru, la prieteni, la cumpărături.
+
+Vanessa: Povestește-mi ultima dată când ți-a fost greu să găsești loc.
+Participant: Vinerea trecută. Am avut o cină în Centrul Vechi pe la 8. Am dat vreo 20 de minute ture pe străduțe, până la urmă am băgat-o în parcarea de la Universitate și am mers pe jos vreo 10 minute.
+
+Vanessa: Cât ai plătit acolo?
+Participant: Nu mai știu exact, ceva gen 30 de lei pentru vreo patru ore. Nu mă deranjează neapărat prețul, mă enervează că am pierdut timpul ăla învârtindu-mă.
+
+Vanessa: Ce faci de obicei ca să eviți să cauți atât?
+Participant: Dacă știu că merg în centru, de multe ori iau Bolt și gata. Sau plec mai devreme. Altfel caut direct o parcare subterană, că pe stradă e la noroc.
+
+Vanessa: Ai parcat vreodată pe locul cuiva, într-o curte sau într-un complex?
+Participant: Da, o dată în Floreasca, pe un loc dintr-o parcare de bloc care părea liber. Când m-am întors aveam un bilet cu niște înjurături pe parbriz. De atunci nu mai fac asta.
+
+Vanessa: Cam cât cheltui pe lună pe parcare când ieși prin oraș?
+Participant: Nu țin socoteala. Poate 80–100 de lei, plus Bolt-urile pe care le iau ca să nu mă chinui cu parcarea. Alea sunt mai multe, sincer
+
+Vanessa: Revenind la locul tău de acasă: ziua, cât ești la birou, ce se întâmplă cu el?
+Participant: Mașina stă acolo, că merg cu metroul. Deci practic locul e ocupat tot timpul. Liber e doar când plec cu ea seara sau în weekend.
+
+Vanessa: Ți-a cerut vreodată cineva să folosească locul?
+Participant: Da, vara trecută. Am fost două săptămâni în concediu cu mașina, și un vecin de la etajul doi m-a întrebat dacă poate să parcheze cumnatul lui acolo cât lipsesc.
+
+Vanessa: Și ce i-ai zis?
+Participant: I-am zis că da, nu i-am cerut nimic. Era vecin, îl știu de ani de zile. Dacă era cineva necunoscut, nu știu, probabil nu.
+
+Vanessa: De ce probabil nu?
+Participant: Păi n-am cum să știu cine e, dacă pleacă la timp, dacă nu-mi lovește ceva. Și dacă vin eu mai devreme acasă și e cineva pe loc, unde parchez?
+
+Vanessa: Ți s-a întâmplat să-ți parcheze cineva pe loc fără să te întrebe?
+Participant: De câteva ori. Ultima dată acum o lună, sâmbătă seara. Am stat vreo 40 de minute până a venit omul, am sunat și la poliția locală, dar până să vină ei a plecat.
+
+Vanessa: Ai făcut ceva ca să nu se mai întâmple?
+Participant: Am pus un semn cu „Proprietate privată” și m-am gândit să pun un stâlp rabatabil, dar n-am apucat. Costă vreo 300–400 de lei cu montaj, am tot amânat.
+
+Vanessa: Mersi mult!`
   }
 ];
 
