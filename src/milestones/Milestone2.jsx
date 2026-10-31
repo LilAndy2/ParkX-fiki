@@ -150,8 +150,7 @@ export default function MilestoneTwo() {
             Record of ParkX customer discovery: {interviewStats.total} completed
             interviews ({interviewStats.audio} audio, {interviewStats.whatsapp}{" "}
             WhatsApp), covering drivers and private-space owners in Bucharest.
-            Findings below are tied to dated evidence in{" "}
-            <code className="text-mint">public/evidence/m2</code>.
+            Findings below are tied to the interview records and evidence.
           </p>
         </div>
       </section>
@@ -161,12 +160,12 @@ export default function MilestoneTwo() {
         className="mx-auto max-w-6xl px-5 pb-10 flex gap-x-6 gap-y-3 flex-wrap text-sm text-slate-300"
       >
         {[
-          ["discovery-problem", "01. Problem"],
-          ["discovery-solution", "02. Proposed solution"],
-          ["discovery-plan", "03. Discovery plan"],
-          ["discovery-segments", "04. Process in detail"],
-          ["discovery-product", "05. Product impact"],
-          ["discovery-validation", "06. Validation readiness"],
+          ["discovery-problem", "Problem"],
+          ["discovery-solution", "Proposed solution"],
+          ["discovery-plan", "Discovery plan"],
+          ["discovery-segments", "Process in detail"],
+          ["discovery-product", "Product impact"],
+          ["discovery-validation", "Validation readiness"],
           ["discovery-evidence", "Evidence"],
         ].map(([id, label]) => (
           <a key={id} href={`#${id}`} className="hover:text-mint transition">
@@ -380,17 +379,6 @@ export default function MilestoneTwo() {
                 George, Persoana 1–3. Chat screenshots + PDF transcripts under{" "}
                 <code className="text-slate-300">Conversatii mesaje/</code>.
                 Vanessa’s interviews started from a short screening form.
-              </p>
-            </article>
-            <article className="glass p-6">
-              <h3 className="font-bold">Focus groups</h3>
-              <p className="muted text-sm mt-3">Not used in Milestone 2.</p>
-            </article>
-            <article className="glass p-6">
-              <h3 className="font-bold">Landing page / email capture</h3>
-              <p className="muted text-sm mt-3">
-                Not used for discovery evidence in Milestone 2. A short form was
-                used only as a recruitment screen for some WhatsApp interviews.
               </p>
             </article>
           </div>
