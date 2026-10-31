@@ -226,6 +226,208 @@ Vanessa: Ai făcut ceva ca să nu se mai întâmple?
 Participant: Am pus un semn cu „Proprietate privată” și m-am gândit să pun un stâlp rabatabil, dar n-am apucat. Costă vreo 300–400 de lei cu montaj, am tot amânat.
 
 Vanessa: Mersi mult!`
+  },
+  {
+id: "W-C1",
+displayName: "Persoana 10",
+method: "whatsapp",
+segment: "Driver who avoids peak traffic and usually parks in central areas on weekends",
+side: "driver",
+date: "31 Oct 2026",
+interviewer: "Costin",
+audio: null,
+pdf: "/evidence/m2/Conversatii mesaje/Pers1_Costin/Interviu_Participant1.pdf",
+screenshots: ["/evidence/m2/Conversatii mesaje/Pers1_Costin/Pers1.png"],
+highlights: [
+  "Avoids driving during peak traffic and usually travels by car on weekends or late evenings",
+  "Recently found central parking in about five minutes using familiar side streets",
+  "Said parking signs do not always make it clear whether payment is required"
+],
+transcript: `Costin: Salut! Am văzut că ai completat formularul nostru. Ai câteva minute să îți pun niște întrebări despre cum conduci și parchezi prin oraș?
+Participant 1: Salut, da, sigur.
+
+Costin: Când a fost ultima dată când ai condus?
+Participant 1: Săptămâna trecută, în weekend. Am fost prin centru, aveam de văzut niște prieteni.
+
+Costin: Cum simți că este traficul din București?
+Participant 1: Nu știu sincer, că îl evit. Plec la ore la care știu că nu e aglomerat, pentru că știu cât de mult se stă. În timpul săptămânii aproape că nu iau mașina, doar în weekend sau seara mai târziu.
+
+Costin: Și ultima dată cum te-ai organizat ca să nu prinzi aglomerație?
+Participant 1: M-am uitat pe Google Maps înainte să plec și am plecat pe la 11 în loc de prânz. Sâmbătă dimineața e destul de liber.
+
+Costin: Te deplasezi în mai multe zone necunoscute față de locuință?
+Participant 1: Da, destul de des. Cel mai des prin centru, dar mai merg și prin alte cartiere când am treabă.
+
+Costin: Povestește-mi cum a fost ultima dată când ai parcat în centru.
+Participant 1: Destul de ok. Zona centrală are locuri de parcare suficiente, mai ales în weekend. Am intrat pe o stradă laterală și am găsit loc în vreo 5 minute.
+
+Costin: Cum ai știut unde să cauți?
+Participant 1: Mai mult din experiență, știu câteva străzi unde de obicei e loc. Dacă nu găsesc acolo, mă duc direct la o parcare publică.
+
+Costin: Ți s-a întâmplat să nu găsești deloc loc?
+Participant 1: Rar. O dată sau de două ori, vineri seara. Atunci am lăsat mașina mai departe și am mers vreo 10 minute pe jos.
+
+Costin: Cum ai plătit ultima dată, cash sau card?
+Participant 1: Card sau SMS. De obicei SMS, că e cel mai simplu și nu mai caut automatul.
+
+Costin: Cam cât ai dat pe parcare la ieșirea aia?
+Participant 1: Câțiva lei, depinde cât stau. Nu e o sumă care să mă deranjeze.
+
+Costin: Mai e ceva legat de parcare care te enervează și nu te-am întrebat?
+Participant 1: Nu prea. Poate doar că uneori nu e clar dacă zona e cu plată sau nu și trebuie să cauți indicatorul.`
+  },
+  {
+id: "W-C2",
+displayName: "Persoana 11",
+method: "whatsapp",
+segment: "Driver who commutes by car and sometimes visits clients in unfamiliar areas",
+side: "driver",
+date: "31 Oct 2026",
+interviewer: "Costin",
+audio: null,
+pdf: "/evidence/m2/Conversatii mesaje/Pers2_Costin/Interviu_Participant2.pdf",
+screenshots: ["/evidence/m2/Conversatii mesaje/Pers2_Costin/Pers2.png"],
+highlights: [
+  "Daily commute can take nearly an hour instead of the usual 20 minutes because of traffic",
+  "About once or twice a month, searches nearby streets before using a private lot for around 30 lei for three hours",
+  "Would like parking prices to be clear in advance because they vary between lots"
+],
+transcript: `Costin: Salut! Am văzut că ai completat formularul nostru. Ai câteva minute să îți pun niște întrebări despre cum conduci și parchezi prin oraș?
+Participant 2: Da, zi.
+
+Costin: Când a fost ultima dată când ai condus?
+Participant 2: Acum 5 minute, abia am ajuns acasă de la birou.
+
+Costin: Cum simți că este traficul din București?
+Participant 2: Oribil. Azi am făcut aproape o oră pe un drum care în mod normal ia 20 de minute. Și cam așa e în fiecare zi.
+
+Costin: Ce ai făcut azi când ai văzut că se stă?
+Participant 2: Nimic, ce să fac, am stat. Am încercat să o iau pe niște străzi laterale, dar era la fel de plin.
+
+Costin: Ai primit vreodată amendă de parcare sau ai primit caracatiță?
+Participant 2: Nu. Sunt destul de atent unde las mașina, prefer să plătesc decât să risc.
+
+Costin: Te deplasezi în mai multe zone necunoscute față de locuință?
+Participant 2: Da, mai merg la clienți în diverse zone, pentru muncă.
+
+Costin: Povestește-mi ultima dată când a trebuit să parchezi într-o zonă din asta.
+Participant 2: Scumpă. Am lăsat mașina într-o parcare privată lângă o clădire de birouri, că nu găseam altceva, și am dat în jur de 30 de lei pentru vreo 3 ore.
+
+Costin: Ai căutat și altceva înainte să intri acolo?
+Participant 2: Am dat vreo două ture pe străzile din jur, dar totul era ocupat sau marcat doar pentru riverani. Până la urmă am zis că nu mai pierd timpul.
+
+Costin: Cât de des ți se întâmplă asta?
+Participant 2: Cam o dată, de două ori pe lună.
+
+Costin: Cash sau card?
+Participant 2: Card. Nu prea am cash la mine.
+
+Costin: Ai încercat vreodată să plătești mai puțin în situațiile astea?
+Participant 2: Nu chiar. M-am gândit că ar trebui să caut din timp, dar de obicei plec în grabă și nu mai apuc.
+
+Costin: Mai e ceva legat de parcare care te enervează și nu te-am întrebat?
+Participant 2: Doar că prețurile diferă mult de la o parcare la alta și nu știi dinainte cât o să plătești.`
+  },
+  {
+id: "W-C3",
+displayName: "Persoana 12",
+method: "whatsapp",
+segment: "Driver who uses Waze parking suggestions when traveling to unfamiliar areas",
+side: "driver",
+date: "31 Oct 2026",
+interviewer: "Costin",
+audio: null,
+pdf: "/evidence/m2/Conversatii mesaje/Pers3_Costin/Interviu_Participant3.pdf",
+screenshots: ["/evidence/m2/Conversatii mesaje/Pers3_Costin/Pers3.png"],
+highlights: [
+  "Uses Waze parking suggestions to find lots near unfamiliar destinations",
+  "A suggested lot was full once, leading to another 10–15 minute search nearby",
+  "Said availability is unknown until drivers arrive"
+],
+transcript: `Costin: Salut! Am văzut că ai completat formularul nostru. Ai câteva minute să îți pun niște întrebări despre cum conduci și parchezi prin oraș?
+Participant 3: Salut, da.
+
+Costin: Când a fost ultima dată când ai condus?
+Participant 3: Acum 2 zile, am fost până în Militari la un prieten.
+
+Costin: Cum simți că este traficul din București?
+Participant 3: Foarte aglomerat, mai ales pe bulevardele mari și la orele de vârf.
+
+Costin: Cât de des faci opriri când conduci?
+Participant 3: Aproape deloc. De obicei merg direct dintr-un loc în altul, nu prea opresc pe drum.
+
+Costin: Care a fost ultima dată când ai oprit pe drum?
+Participant 3: Cred că acum vreo două săptămâni, la o farmacie. Am lăsat mașina pe avarii câteva minute.
+
+Costin: Ai primit vreodată amendă de parcare sau ai primit caracatiță?
+Participant 3: Nu.
+
+Costin: Te deplasezi în mai multe zone necunoscute față de locuință?
+Participant 3: Da.
+
+Costin: Ce ai făcut ultima dată ca să găsești parcare mai repede?
+Participant 3: Aleg opțiunea Parking de pe Waze. Îți arată parcările din zona destinației și mă duc direct acolo.
+
+Costin: Și cum a mers?
+Participant 3: De cele mai multe ori bine. O dată însă m-a dus la o parcare care era plină și a trebuit să caut pe străzile din jur.
+
+Costin: Cât timp ai pierdut atunci?
+Participant 3: Vreo 10–15 minute până am găsit ceva.
+
+Costin: Cash sau card?
+Participant 3: Card.
+
+Costin: Mai e ceva legat de parcare care te enervează și nu te-am întrebat?
+Participant 3: Doar că nu știi niciodată dacă parcarea are locuri libere până nu ajungi acolo.`
+  },
+  {
+id: "W-C4",
+displayName: "Persoana 13",
+method: "whatsapp",
+segment: "Driver who often visits unfamiliar areas and sometimes parks outside marked spaces",
+side: "driver",
+date: "31 Oct 2026",
+interviewer: "Costin",
+audio: null,
+pdf: "/evidence/m2/Conversatii mesaje/Pers4_Costin/Interviu_Participant4.pdf",
+screenshots: ["/evidence/m2/Conversatii mesaje/Pers4_Costin/Pers4.png"],
+highlights: [
+  "When marked spaces were full, searched for about 10 minutes before parking partly on a green verge",
+  "This happens about once a week when visiting unfamiliar areas and causes worry about fines",
+  "Usually pays by card through an app or at a machine"
+],
+transcript: `Costin: Salut! Am văzut că ai completat formularul nostru. Ai câteva minute să îți pun niște întrebări despre cum conduci și parchezi prin oraș?
+Participant 4: Da, sigur.
+
+Costin: Când a fost ultima dată când ai condus?
+Participant 4: Ieri, am fost la un eveniment în Floreasca.
+
+Costin: Cum simți că este traficul din București?
+Participant 4: Congestionat, în majoritatea timpului. Doar seara târziu sau în weekend dimineața e ok.
+
+Costin: Ai primit vreodată amendă de parcare sau ai primit caracatiță?
+Participant 4: Nu-mi amintesc să fi primit, nu.
+
+Costin: Te deplasezi în mai multe zone necunoscute față de locuință?
+Participant 4: Da, destul de des.
+
+Costin: Cum a fost experiența acelei parcări?
+Participant 4: Câteodată mai complicată, în sensul că nu am avut un loc propriu-zis de parcare și a trebuit să pun mașina lateral, în afara străzii. Câteodată am găsit și locuri și a fost ok.
+
+Costin: Povestește-mi ultima dată când a trebuit să o pui lateral.
+Participant 4: Era o stradă îngustă, toate locurile erau ocupate, așa că am urcat cu două roți pe o bucată de spațiu verde de pe margine. Tot timpul cât am stat m-am gândit dacă nu iau amendă.
+
+Costin: Ce ai făcut înainte să te hotărăști să o lași acolo?
+Participant 4: Am dat câteva ture prin zonă, cam 10 minute, și n-am găsit nimic.
+
+Costin: Cât de des ți se întâmplă asta?
+Participant 4: Cam o dată pe săptămână, când merg într-o zonă unde nu am mai fost.
+
+Costin: Cash sau card?
+Participant 4: Card plătesc, în general. Prin aplicație sau la automat, dacă acceptă card.
+
+Costin: Mai e ceva legat de parcare care te enervează și nu te-am întrebat?
+Participant 4: Nu, cam asta e.`
   }
 ];
 

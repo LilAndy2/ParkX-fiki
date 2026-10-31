@@ -3,6 +3,83 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import SectionHeading from "../components/SectionHeading.jsx";
 import { interviews, interviewStats } from "./m2Interviews.js";
 
+const surveyStats = {
+  total: 23,
+  drivers: 13,
+  owners: 8,
+  other: 2,
+  driversByDays: [
+    ["1–2 days", 5],
+    ["3–4 days", 4],
+    ["5+ days", 3],
+  ],
+  driversWhoDrove: 12,
+  driverSpend: [
+    ["0 lei", 1],
+    ["Under 50 lei", 5],
+    ["50–150 lei", 4],
+    ["150–300 lei", 1],
+    ["Over 300 lei", 2],
+  ],
+  driverFineHistory: [
+    ["No", 9],
+    ["Once", 2],
+    ["2–3 times", 2],
+  ],
+  ownersNeverRented: 8,
+  ownersByRules: [
+    ["Yes", 4],
+    ["No", 2],
+    ["Unsure", 2],
+  ],
+  ownersByAccess: [
+    ["Open access", 3],
+    ["Barrier or remote", 3],
+    ["Key or card", 1],
+    ["LPR", 1],
+  ],
+  followUpYes: 9,
+  followUpAnswered: 21,
+};
+
+function SurveyBarChart({ title, total, rows }) {
+  return (
+    <article className="glass p-6">
+      <h3 className="font-bold">{title}</h3>
+      <p className="muted text-xs mt-1">Responses: {total}</p>
+      <div className="mt-5 space-y-4">
+        {rows.map(([label, count]) => {
+          const percentage = Math.round((count / total) * 100);
+
+          return (
+            <div
+              key={label}
+              role="img"
+              aria-label={`${label}: ${count} of ${total} responses, ${percentage}%`}
+            >
+              <div className="flex justify-between gap-3 text-sm">
+                <span className="text-slate-300">{label}</span>
+                <span className="shrink-0 text-slate-400">
+                  {count} ({percentage}%)
+                </span>
+              </div>
+              <div
+                aria-hidden="true"
+                className="mt-2 h-2 overflow-hidden rounded-full bg-white/10"
+              >
+                <div
+                  className="h-full rounded-full bg-mint"
+                  style={{ width: `${percentage}%` }}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </article>
+  );
+}
+
 const problemQuestions = [
   "Tell me about the last time you had difficulty finding parking. Where were you going, and what happened?",
   "How often has this happened recently? Can you recall specific dates or occasions?",
@@ -31,9 +108,13 @@ function EvidenceCard({ interview, participantNumber }) {
         transcript = transcript.split(name).join("Interviewer");
       },
     );
-    ["Intervievatorul", "Intervievator", "Participant"].forEach((label) => {
+    ["Intervievatorul", "Intervievator"].forEach((label) => {
       transcript = transcript.split(label).join("Interviewer");
     });
+    transcript = transcript.replace(
+      /\bParticipant(?: \d+)?\b/g,
+      `Persoana ${participantNumber}`,
+    );
     ["Andra", "Cristina", "Denis", "Lorena", "George"].forEach((name) => {
       transcript = transcript.replace(
         new RegExp(`\\b${name}\\b`, "g"),
@@ -280,19 +361,20 @@ export default function MilestoneTwo() {
             <p className="muted mt-4">
               We investigated two groups: drivers looking for convenient
               parking and owners of private spaces that are unused at certain
-              times. We used audio interviews and WhatsApp message interviews,
-              recruiting through personal networks and a short screening form.
-              Conversations started with past experiences and current
-              workarounds before introducing ParkX-style ideas. We then compared
-              responses across segments and used the evidence to refine the
-              product and assess readiness for customer validation.
+              times. We used audio interviews, WhatsApp message interviews,
+              and an online questionnaire with {surveyStats.total} responses.
+              Participants were reached through personal networks and the
+              questionnaire. Conversations started with past experiences and
+              current workarounds before introducing ParkX-style ideas. We
+              then compared responses across segments and used the evidence
+              to refine the product and assess readiness for customer validation.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               ["1. Select segments", "Drivers (commuters, residents, hospital/center trips) and private-space owners (idle daytime spots, multi-spot landlords)."],
-              ["2. Recruit participants", "Personal outreach and a team screening form. WhatsApp follow-ups for message interviews."],
-              ["3. Collect information", `${interviewStats.total} interviews completed: ${interviewStats.audio} audio recordings and ${interviewStats.whatsapp} WhatsApp chats with screenshots.`],
+              ["2. Recruit participants", "Personal outreach and an online questionnaire. Some respondents were invited to a follow-up interview."],
+              ["3. Collect information", `${surveyStats.total} questionnaire responses and ${interviewStats.total} interviews: ${interviewStats.audio} audio recordings and ${interviewStats.whatsapp} WhatsApp chats with screenshots.`],
               ["4. Analyze and decide", "We compared demand and supply patterns, then considered product implications and readiness for validation."],
             ].map(([title, text]) => (
               <article key={title} className="glass p-6">
@@ -304,11 +386,11 @@ export default function MilestoneTwo() {
           <div className="glass p-7 mt-5">
             <h3 className="font-bold text-lg">Problem first, solution second</h3>
             <p className="muted text-sm mt-3">
-              In each conversation we first asked about real past parking
-              episodes, frequency, spend, fines and informal rental attempts.
-              Solution questions (guarantee, access, price, monthly vs hourly)
-              came only after the problem discussion, so participants described
-              behavior before reacting to ParkX.
+              Interviews focused on real past parking episodes, frequency,
+              spending, fines, and current workarounds. Some earlier interviews
+              also included follow-up questions about renting, access, or price.
+              The four interviews conducted by another team member focused on
+              participants’ past experiences and current behavior.
             </p>
           </div>
         </div>
@@ -326,7 +408,7 @@ export default function MilestoneTwo() {
           </h3>
           <p className="muted mb-5">
             {interviewStats.drivers} participants spoke mainly as drivers,{" "}
-            {interviewStats.owners} as owners (one participant appears on both
+            {interviewStats.owners} as owners (two participants appear on both
             sides).
           </p>
           <div className="grid md:grid-cols-2 items-stretch gap-5">
@@ -334,12 +416,13 @@ export default function MilestoneTwo() {
               <h3 className="font-bold text-xl">Drivers — demand side</h3>
               <p className="muted text-sm mt-3">
                 <span className="font-semibold text-slate-200">Participants:</span>{" "}
-                1, 3, 4, 5, 6, 7, and 9.
+                1, 3–7, and 9–13.
               </p>
               <p className="muted text-sm mt-2">
-                Person 6 commutes to Regie. Person 7 drives regularly to
-                hospitals, and Person 1 also looks for parking near work in
-                Pipera.
+                Participant 6 commutes to Regie. Participant 7 drives regularly
+                to hospitals. Participant 1 looks for parking near work in
+                Pipera. Participants 10–13 described different experiences in
+                central and unfamiliar areas.
               </p>
               <div className="mt-auto border-t border-white/10 pt-5">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-mint">
@@ -361,9 +444,10 @@ export default function MilestoneTwo() {
                 1, 2, 8, and 9.
               </p>
               <p className="muted text-sm mt-2">
-                Person 1 has a space in a gated complex. Person 2 has a spot
-                that is unused during the day. Person 8 owns multiple spots,
-                and Person 9 owns a spot in Drumul Taberei.
+                Participant 1 has a space in a gated complex. Participant 2
+                has a spot that is unused during the day. Participant 8 owns
+                multiple spots, and Participant 9 owns a spot in Drumul
+                Taberei.
               </p>
               <div className="mt-auto border-t border-white/10 pt-5">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-mint">
@@ -381,12 +465,12 @@ export default function MilestoneTwo() {
             <h3 className="font-bold text-lg">Recruitment log</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 text-sm">
               {[
-                "Channels: team members’ personal networks and the team screening form, followed by WhatsApp interviews",
+                `Channels: team members’ personal networks and an online questionnaire with ${surveyStats.total} responses, followed by interviews`,
                 "Eligibility: recent Bucharest parking struggle and/or control of a private spot",
                 `${interviewStats.total} conversations completed (30–31 Oct 2026)`,
                 `Methods mix: ${interviewStats.audio} audio + ${interviewStats.whatsapp} WhatsApp message interviews`,
                 "Participants are anonymized in the interview evidence cards",
-                "Limitation: this was a convenience sample recruited through team networks, so it is not statistically representative",
+                "Limitation: this was a convenience sample, so it is not statistically representative",
               ].map((item) => (
                 <p key={item} className="rounded-xl bg-white/[.035] p-4 text-slate-300">
                   {item}
@@ -403,7 +487,7 @@ export default function MilestoneTwo() {
             tag="04.1 / Research methods"
             title="Research methods and process"
           />
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-3 gap-5">
             <article className="glass p-6 border-mint/20">
               <h3 className="font-bold">Audio interviews</h3>
               <p className="muted text-sm mt-3">
@@ -414,10 +498,21 @@ export default function MilestoneTwo() {
             <article className="glass p-6 border-mint/20">
               <h3 className="font-bold">WhatsApp message interviews</h3>
               <p className="muted text-sm mt-3">
-                Participants 5–9 took part in WhatsApp interviews. Chat
+                Participants 5–13 took part in WhatsApp interviews. Chat
                 screenshots and PDF transcripts are available in the evidence
-                cards. Some participants were recruited through a short
-                screening form.
+                cards. Some participants had also completed the online
+                questionnaire.
+              </p>
+            </article>
+            <article className="glass p-6 border-mint/20">
+              <h3 className="font-bold">Online questionnaire</h3>
+              <p className="muted text-sm mt-3">
+                {surveyStats.total} responses covered driving frequency,
+                parking episodes, workarounds, payments, costs, fines, private
+                spaces, availability, rental history, access, and building
+                rules. {surveyStats.followUpYes} of the{" "}
+                {surveyStats.followUpAnswered} respondents who answered the
+                follow-up question agreed to be contacted.
               </p>
             </article>
           </div>
@@ -439,7 +534,7 @@ export default function MilestoneTwo() {
           <SectionHeading
             tag="04.2 / Interview guide"
             title="Questions we asked"
-            desc="This common question bank was used across interviews. Exact wording varies by conversation, and the full phrasing is available in each transcript PDF."
+            desc="These are recurring question themes from the interviews. Exact wording and topics varied by conversation. Full transcripts are available in the evidence cards."
           />
           <div className="grid lg:grid-cols-2 gap-5">
             <article className="glass p-7">
@@ -451,7 +546,7 @@ export default function MilestoneTwo() {
               </ol>
             </article>
             <article className="glass p-7">
-              <h3 className="font-bold text-lg">Solution discovery (after the problem)</h3>
+              <h3 className="font-bold text-lg">Follow-up questions in some interviews</h3>
               <ol className="muted text-sm mt-4 list-decimal pl-5 space-y-3">
                 {solutionQuestions.map((question) => (
                   <li key={question}>{question}</li>
@@ -467,25 +562,25 @@ export default function MilestoneTwo() {
           <SectionHeading
             tag="04.3 / Results"
             title="Findings"
-            desc={`Patterns from ${interviewStats.total} interviews. Quotes and details are included in the evidence cards. Participant labels identify each source.`}
+            desc={`Findings from ${surveyStats.total} questionnaire responses and ${interviewStats.total} interviews. Participant labels identify interview sources.`}
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               [
                 "Research snapshot",
-                `${interviewStats.total} interviews on 30–31 Oct 2026: ${interviewStats.audio} audio, ${interviewStats.whatsapp} WhatsApp. Convenience sample via team networks + screening form.`,
+                `${surveyStats.total} questionnaire responses and ${interviewStats.total} interviews (${interviewStats.audio} audio, ${interviewStats.whatsapp} WhatsApp). Convenience sample recruited through personal networks and the questionnaire.`,
               ],
               [
                 "Searching is a recurring cost",
-                "Drivers independently described 10–25 minute searches near home or a destination (Participants 3, 4, 5, 6, 7, and 9). One recent central-Bucharest trip took about 20 minutes to find parking (Participant 9). Early arrival or weekends can be easier (Participants 4 and 6).",
+                "Several drivers described searches lasting 10–25 minutes near home or a destination (Participants 3–7, 9, 12, and 13). Experiences varied. Participant 10 usually finds central parking in about five minutes on weekends, while Participants 12 and 13 described unsuccessful searches.",
               ],
               [
                 "Workarounds already exist",
-                "Paid lots under time pressure, metro/Bolt/Uber instead of driving, leaving earlier, blocking cars with a phone number in Regie (Participant 6), and informal monthly rentals through neighbors or colleagues. Participant 9 estimates 80–100 lei monthly on parking, plus Bolt rides to avoid searching.",
+                "Participants described using paid lots, taking the metro or Bolt instead of driving, leaving earlier, and informal monthly rentals. Participant 6 sometimes blocks cars in Regie and leaves a phone number. Participant 10 avoids peak traffic, Participant 12 checks Waze parking suggestions, and Participant 13 once parked partly on a green verge after searching.",
               ],
               [
                 "Informal rental market is trust-based",
-                "Participants 2, 5, and 7 already rent parking monthly. Participant 1 found a spot in Pipera through a colleague after OLX did not work. Participants 1, 2, and 8 described trust concerns or unreliable listings on OLX and Facebook.",
+                "Some interview participants already rent parking monthly. Participant 1 found a spot in Pipera through a colleague after OLX did not work. Other owners described trust concerns or unreliable listings on OLX and Facebook. In the questionnaire, all 8 private-space owners said they had never rented out their space, highlighting that owner participation cannot be assumed.",
               ],
               [
                 "Owner blockers for hourly P2P",
@@ -493,7 +588,11 @@ export default function MilestoneTwo() {
               ],
               [
                 "Price & commitment signals",
-                "Monthly price references ranged from about 200–350 lei to €50. Participant 5 said around 20–25 lei for two guaranteed hours nearby felt reasonable. At 40–50 lei per hour, Uber seemed like a better option. Participant 3 would pay only for a nearby space that is guaranteed to be available.",
+                "Interview participants cited monthly prices from about 200–350 lei to €50. In the questionnaire, drivers reported a wide range of monthly parking spend: 1 reported 0 lei, 5 under 50 lei, 4 between 50 and 150 lei, 1 between 150 and 300 lei, and 2 over 300 lei. Participant 11 reported paying around 30 lei for three hours and said lot prices vary. These are reported behaviors, not purchase commitments.",
+              ],
+              [
+                "Availability and pricing information",
+                "Participants 10 and 11 said parking signs or lot prices can be unclear. Participant 12 noted that drivers may only discover a lot is full after arriving. This points to uncertainty about rules, price, and real-time availability.",
               ],
             ].map(([title, text]) => (
               <article key={title} className="glass p-6">
@@ -502,14 +601,95 @@ export default function MilestoneTwo() {
               </article>
             ))}
           </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+            {[
+              ["Responses", surveyStats.total],
+              ["Drivers", surveyStats.drivers],
+              ["Private-space owners", surveyStats.owners],
+              ["Neither segment", surveyStats.other],
+            ].map(([label, count]) => (
+              <article key={label} className="glass p-5">
+                <p className="text-3xl font-bold text-mint">{count}</p>
+                <h3 className="muted text-sm mt-1">{label}</h3>
+              </article>
+            ))}
+          </div>
+          <div className="grid md:grid-cols-2 gap-4 mt-4">
+            <SurveyBarChart
+              title="Driving frequency among active drivers last week"
+              total={surveyStats.driversWhoDrove}
+              rows={surveyStats.driversByDays}
+            />
+            <SurveyBarChart
+              title="Drivers — parking spend last month"
+              total={surveyStats.drivers}
+              rows={surveyStats.driverSpend}
+            />
+            <SurveyBarChart
+              title="Drivers — parking fines or towing in past year"
+              total={surveyStats.drivers}
+              rows={surveyStats.driverFineHistory}
+            />
+            <SurveyBarChart
+              title="Owners — access to their space"
+              total={surveyStats.owners}
+              rows={surveyStats.ownersByAccess}
+            />
+            <SurveyBarChart
+              title="Owners — building rules"
+              total={surveyStats.owners}
+              rows={surveyStats.ownersByRules}
+            />
+            <article className="glass p-6">
+              <h3 className="font-bold">Owners — rental experience</h3>
+              <p className="muted text-xs mt-1">
+                Responses: {surveyStats.owners}
+              </p>
+              <p className="mt-5 text-3xl font-bold text-mint">
+                {surveyStats.ownersNeverRented}/{surveyStats.owners}
+              </p>
+              <p className="muted text-sm mt-1">
+                had never rented out their space.
+              </p>
+              <div
+                role="img"
+                aria-label={`${surveyStats.ownersNeverRented} of ${surveyStats.owners} owners had never rented out their space`}
+                className="mt-4 h-2 overflow-hidden rounded-full bg-white/10"
+              >
+                <div
+                  aria-hidden="true"
+                  className="h-full rounded-full bg-mint"
+                  style={{
+                    width: `${(surveyStats.ownersNeverRented / surveyStats.owners) * 100}%`,
+                  }}
+                />
+              </div>
+              <p className="muted text-sm mt-5">
+                This differs from interview participants who already rent
+                spaces, so owner availability and willingness need further
+                validation.
+              </p>
+            </article>
+          </div>
+          <p className="muted text-xs mt-4">
+            The questionnaire included {surveyStats.drivers} drivers,{" "}
+            {surveyStats.owners} private-space owners, and {surveyStats.other}{" "}
+            respondents who selected neither segment. To protect respondents,
+            individual rows and contact details are not published; the figures
+            shown here are aggregated from the original form export.
+          </p>
           <div className="glass p-7 mt-5">
             <h3 className="font-bold text-lg">Surprises and open questions</h3>
             <p className="muted text-sm mt-3">
               Participant 8 already rents parking spaces with apartments and
-              are cautious about short stays. Some demand is hyper-local (Regie,
-              hospital belts) where private rentable inventory may be scarce.
-              We still lack a paid commitment test and denser owner coverage
-              inside one micro-area.
+              is cautious about short stays. In contrast, all 8 questionnaire
+              respondents with a private space said they had never rented it
+              out. The new driver interviews also show that parking difficulty
+              is not uniform. Weekend parking may
+              be manageable in some central areas, while drivers in unfamiliar
+              areas face uncertainty about price and availability. We still
+              lack a paid commitment test and denser owner coverage inside one
+              micro-area.
             </p>
           </div>
         </div>
@@ -520,7 +700,7 @@ export default function MilestoneTwo() {
           <SectionHeading
             tag="05 / Product impact"
             title="How discovery changed the product"
-            desc={`Evidence → decision chain for ParkX after ${interviewStats.total} interviews.`}
+            desc={`Evidence → decision chain for ParkX after ${surveyStats.total} questionnaire responses and ${interviewStats.total} interviews.`}
           />
           <div className="grid md:grid-cols-3 gap-4">
             {[
@@ -530,11 +710,11 @@ export default function MilestoneTwo() {
               ],
               [
                 "Evidence",
-                "Demand pain is real, but owners fear access/strangers and often prefer stable monthly daytime tenants. Informal rentals already work through trust networks. Guarantee and local density matter more than total city inventory.",
+                "Interview participants described demand pain and informal monthly rentals, while the questionnaire captured varied driver spending and 8 of 8 private-space owners had never rented out their space. Owner supply, access, trust, and willingness therefore remain unproven.",
               ],
               [
                 "After / decision",
-                "Keep the marketplace vision, but prioritize: (1) guaranteed availability + reserve-before-travel, (2) access/gated-complex controls and reclaim rules, (3) monthly daytime listings alongside hourly, (4) launch in dense micro-areas (e.g. Floreasca/Dorobanți, Regie/Grozăvești, hospital belts), (5) verification / simplified owner agreements.",
+                "Keep the marketplace vision, but prioritize: (1) clear price and availability before travel, (2) access/gated-complex controls and reclaim rules, (3) test monthly daytime listings alongside hourly, (4) launch in dense micro-areas (e.g. Floreasca/Dorobanți, Regie/Grozăvești, hospital belts), (5) verification / simplified owner agreements.",
               ],
             ].map(([title, text]) => (
               <article key={title} className="glass p-7">
@@ -565,7 +745,7 @@ export default function MilestoneTwo() {
               {[
                 ["Yes — problem is confirmed", "Multiple drivers independently described recent, costly parking searches and workarounds without being pitched ParkX first."],
                 ["Yes — first narrow use cases exist", "Possible use cases include guaranteed evening parking near a destination, daytime monthly rentals for unused residential spaces, and dense areas such as Regie or hospital districts."],
-                ["Not yet — supply constraints", "Owner interviews show access, remotes, trust and preference for stable tenants. Hourly stranger booking is not obviously the first sellable wedge."],
+                ["Not yet — supply constraints", "In the questionnaire, all 8 private-space owners said they had never rented out their space. Interviews also show access, trust and preference for stable tenants are barriers."],
                 ["Not yet — no payment commitment", "We have stated willingness and price anchors, but no deposit, pre-order or live booking yet."],
               ].map(([title, text]) => (
                 <div key={title} className="rounded-xl bg-white/[.035] p-4">
