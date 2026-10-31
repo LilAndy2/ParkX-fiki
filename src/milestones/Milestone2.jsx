@@ -161,15 +161,12 @@ export default function MilestoneTwo() {
         className="mx-auto max-w-6xl px-5 pb-10 flex gap-x-6 gap-y-3 flex-wrap text-sm text-slate-300"
       >
         {[
-          ["discovery-problem", "Problem"],
-          ["discovery-solution", "Solution hypothesis"],
-          ["discovery-plan", "Plan"],
-          ["discovery-segments", "Segments"],
-          ["discovery-method", "Methods"],
-          ["discovery-questions", "Questions"],
-          ["discovery-findings", "Findings"],
-          ["discovery-product", "Product impact"],
-          ["discovery-validation", "Validation readiness"],
+          ["discovery-problem", "01. Problem"],
+          ["discovery-solution", "02. Proposed solution"],
+          ["discovery-plan", "03. Discovery plan"],
+          ["discovery-segments", "04. Process in detail"],
+          ["discovery-product", "05. Product impact"],
+          ["discovery-validation", "06. Validation readiness"],
           ["discovery-evidence", "Evidence"],
         ].map(([id, label]) => (
           <a key={id} href={`#${id}`} className="hover:text-mint transition">
@@ -302,10 +299,18 @@ export default function MilestoneTwo() {
       <section id="discovery-segments" className="section">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
-            tag="04 / Who we learned from"
-            title="Customer segments and recruitment"
-            desc={`${interviewStats.drivers} participants spoke mainly as drivers; ${interviewStats.owners} as owners (Andra appears on both sides).`}
+            tag="04 / Detailed process"
+            title="Describe the process in detail"
+            desc="The following sections document who we spoke with, how we recruited and interviewed them, the questions we asked, and what we learned."
           />
+          <h3 className="mb-4 mt-7 font-bold text-xl">
+            Customer segments and recruitment
+          </h3>
+          <p className="muted mb-5">
+            {interviewStats.drivers} participants spoke mainly as drivers;{" "}
+            {interviewStats.owners} as owners (one participant appears on both
+            sides).
+          </p>
           <div className="grid md:grid-cols-2 gap-5">
             <article className="glass p-7">
               <h3 className="font-bold text-xl">Drivers — demand side</h3>
@@ -356,7 +361,7 @@ export default function MilestoneTwo() {
       <section id="discovery-method" className="section bg-white/[.02]">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
-            tag="05 / How we collected information"
+            tag="04.1 / Research methods"
             title="Research methods and process"
             desc="Only methods we actually ran are listed as used."
           />
@@ -405,7 +410,7 @@ export default function MilestoneTwo() {
       <section id="discovery-questions" className="section">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
-            tag="06 / Interview guide"
+            tag="04.2 / Interview guide"
             title="Questions we asked"
             desc="Common question bank used across interviews. Exact wording varies by conversation; full phrasing is in each transcript PDF."
           />
@@ -433,7 +438,7 @@ export default function MilestoneTwo() {
       <section id="discovery-findings" className="section bg-white/[.02]">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
-            tag="07 / Results"
+            tag="04.3 / Results"
             title="Findings"
             desc="Patterns from the 8 interviews. Quotes and details live in the evidence cards; IDs below show independent sources."
           />
@@ -486,7 +491,7 @@ export default function MilestoneTwo() {
       <section id="discovery-product" className="section">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
-            tag="08 / Product implications"
+            tag="05 / Product impact"
             title="How discovery changed the product"
             desc="Evidence → decision chain for ParkX after the 8 interviews."
           />
@@ -517,7 +522,7 @@ export default function MilestoneTwo() {
       <section id="discovery-validation" className="section bg-white/[.02]">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
-            tag="09 / Next decision"
+            tag="06 / Validation readiness"
             title="Are we ready for customer validation?"
             desc="Customer validation tests whether customers will take meaningful steps to buy — not only whether they like the idea."
           />
@@ -554,7 +559,7 @@ export default function MilestoneTwo() {
       <section id="discovery-evidence" className="section">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
-            tag="10 / Audit trail"
+            tag="Supporting evidence"
             title="Evidence and research records"
             desc="Each card links the interview metadata to audio or WhatsApp screenshots, the PDF transcript, and an on-page transcript."
           />
