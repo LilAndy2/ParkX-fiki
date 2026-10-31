@@ -23,6 +23,25 @@ const solutionQuestions = [
 
 function EvidenceCard({ interview, participantNumber }) {
   const [open, setOpen] = React.useState(false);
+  const anonymousTranscript = React.useMemo(() => {
+    let transcript = interview.transcript;
+
+    [interview.interviewer, "Vanessa", "Andrei M.", "Andrei L."].forEach(
+      (name) => {
+        transcript = transcript.split(name).join("Interviewer");
+      },
+    );
+    ["Intervievatorul", "Intervievator", "Participant"].forEach((label) => {
+      transcript = transcript.split(label).join("Interviewer");
+    });
+    ["Andra", "Cristina", "Denis", "Lorena", "George"].forEach((name) => {
+      transcript = transcript.replace(
+        new RegExp(`\\b${name}\\b`, "g"),
+        `Persoana ${participantNumber}`,
+      );
+    });
+    return transcript.replace(/Persoana \d+/g, `Persoana ${participantNumber}`);
+  }, [interview, participantNumber]);
 
   return (
     <article className="glass p-6 md:p-7">
@@ -96,7 +115,7 @@ function EvidenceCard({ interview, participantNumber }) {
 
       {open && (
         <div className="mt-4 max-h-80 overflow-y-auto rounded-xl bg-black/30 border border-white/10 p-4 text-sm text-slate-300 whitespace-pre-wrap leading-relaxed">
-          {interview.transcript}
+          {anonymousTranscript}
         </div>
       )}
     </article>
@@ -272,9 +291,9 @@ export default function MilestoneTwo() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               ["1. Select segments", "Drivers (commuters, residents, hospital/center trips) and private-space owners (idle daytime spots, multi-spot landlords)."],
-              ["2. Recruit participants", "Personal outreach plus Vanessa’s screening form; WhatsApp follow-ups for message interviews."],
+              ["2. Recruit participants", "Personal outreach and a team screening form. WhatsApp follow-ups for message interviews."],
               ["3. Collect information", `${interviewStats.total} interviews completed: ${interviewStats.audio} audio recordings and ${interviewStats.whatsapp} WhatsApp chats with screenshots.`],
-              ["4. Analyze and decide", "Pattern analysis across demand and supply; product implications; validation readiness decision."],
+              ["4. Analyze and decide", "We compared demand and supply patterns, then considered product implications and readiness for validation."],
             ].map(([title, text]) => (
               <article key={title} className="glass p-6">
                 <h3 className="font-bold text-lg">{title}</h3>
@@ -306,47 +325,68 @@ export default function MilestoneTwo() {
             Customer segments and recruitment
           </h3>
           <p className="muted mb-5">
-            {interviewStats.drivers} participants spoke mainly as drivers;{" "}
+            {interviewStats.drivers} participants spoke mainly as drivers,{" "}
             {interviewStats.owners} as owners (one participant appears on both
             sides).
           </p>
-          <div className="grid md:grid-cols-2 gap-5">
-            <article className="glass p-7">
+          <div className="grid md:grid-cols-2 items-stretch gap-5">
+            <article className="glass flex h-full flex-col p-7">
               <h3 className="font-bold text-xl">Drivers — demand side</h3>
               <p className="muted text-sm mt-3">
-                Denis, Lorena, George, Persoana 1 (Regie commute), Persoana 2
-                (hospital routes), plus Andra when parking for work in Pipera.
+                <span className="font-semibold text-slate-200">Participants:</span>{" "}
+                1, 3, 4, 5, 6, 7, and 9.
               </p>
-              <p className="text-sm text-slate-300 mt-4">
-                Common thread: searching near home or destination regularly
-                costs 10–25 minutes, creates stress, and sometimes changes the
-                mode of transport or leads to fines / paid lots.
+              <p className="muted text-sm mt-2">
+                Person 6 commutes to Regie. Person 7 drives regularly to
+                hospitals, and Person 1 also looks for parking near work in
+                Pipera.
               </p>
+              <div className="mt-auto border-t border-white/10 pt-5">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-mint">
+                  Common pattern
+                </h4>
+                <p className="text-sm text-slate-300 mt-2">
+                  Finding parking near home or a destination often takes 10–25
+                  minutes, causes stress, and can lead to paid parking, fines,
+                  or changing how they travel.
+                </p>
+              </div>
             </article>
-            <article className="glass p-7">
-              <h3 className="font-bold text-xl">Parking-space owners — supply</h3>
+            <article className="glass flex h-full flex-col p-7">
+              <h3 className="font-bold text-xl">
+                Parking-space owners — supply
+              </h3>
               <p className="muted text-sm mt-3">
-                Cristina (basement spot idle daytime), Andra (complex spot with
-                barrier), Persoana 3 (multiple spots rented with apartments;
-                some currently vacant).
+                <span className="font-semibold text-slate-200">Participants:</span>{" "}
+                1, 2, 8, and 9.
               </p>
-              <p className="text-sm text-slate-300 mt-4">
-                Common thread: informal monthly rentals already happen via
-                trust networks; strangers, remotes/barriers and admin risk make
-                short-term sharing hard.
+              <p className="muted text-sm mt-2">
+                Person 1 has a space in a gated complex. Person 2 has a spot
+                that is unused during the day. Person 8 owns multiple spots,
+                and Person 9 owns a spot in Drumul Taberei.
               </p>
+              <div className="mt-auto border-t border-white/10 pt-5">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-mint">
+                  Common pattern
+                </h4>
+                <p className="text-sm text-slate-300 mt-2">
+                  Informal monthly rentals rely on personal trust. Owners are
+                  cautious about strangers, access controls, building rules,
+                  and short-term sharing.
+                </p>
+              </div>
             </article>
           </div>
           <div className="glass p-7 mt-5">
             <h3 className="font-bold text-lg">Recruitment log</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 text-sm">
               {[
-                "Channels: personal network (Andrei L / Andrei M) and Vanessa’s screening form → WhatsApp interviews",
+                "Channels: team members’ personal networks and the team screening form, followed by WhatsApp interviews",
                 "Eligibility: recent Bucharest parking struggle and/or control of a private spot",
                 `${interviewStats.total} conversations completed (30–31 Oct 2026)`,
                 `Methods mix: ${interviewStats.audio} audio + ${interviewStats.whatsapp} WhatsApp message interviews`,
                 "Participants are anonymized in the interview evidence cards",
-                "Limitation: convenience sample via team networks; not statistically representative",
+                "Limitation: this was a convenience sample recruited through team networks, so it is not statistically representative",
               ].map((item) => (
                 <p key={item} className="rounded-xl bg-white/[.035] p-4 text-slate-300">
                   {item}
@@ -362,30 +402,29 @@ export default function MilestoneTwo() {
           <SectionHeading
             tag="04.1 / Research methods"
             title="Research methods and process"
-            desc="Only methods we actually ran are listed as used."
           />
           <div className="grid md:grid-cols-2 gap-5">
             <article className="glass p-6 border-mint/20">
-              <h3 className="font-bold">Audio interviews (used)</h3>
+              <h3 className="font-bold">Audio interviews</h3>
               <p className="muted text-sm mt-3">
-                Andra, Cristina, Denis, Lorena. Recorded with consent; MP3 + PDF
-                transcript stored under{" "}
-                <code className="text-slate-300">Conversatii Audio/</code>.
+                Participants 1–4 took part in audio interviews. MP3 recordings
+                and PDF transcripts are available in the evidence cards.
               </p>
             </article>
             <article className="glass p-6 border-mint/20">
-              <h3 className="font-bold">WhatsApp message interviews (used)</h3>
+              <h3 className="font-bold">WhatsApp message interviews</h3>
               <p className="muted text-sm mt-3">
-                George, Persoana 1–4. Chat screenshots + PDF transcripts under{" "}
-                <code className="text-slate-300">Conversatii mesaje/</code>.
-                Vanessa’s interviews started from a short screening form.
+                Participants 5–9 took part in WhatsApp interviews. Chat
+                screenshots and PDF transcripts are available in the evidence
+                cards. Some participants were recruited through a short
+                screening form.
               </p>
             </article>
           </div>
           <div className="glass p-7 mt-5">
             <h3 className="font-bold text-lg">Interview procedure</h3>
             <ol className="muted text-sm mt-4 list-decimal pl-5 space-y-2">
-              <li>Explain purpose and keep personal details minimal; anonymize WhatsApp participants where needed.</li>
+              <li>Explain the purpose and keep personal details minimal. Anonymize WhatsApp participants where needed.</li>
               <li>Ask about the most recent real parking episode in the participant’s own words.</li>
               <li>Probe frequency, workaround, money/time spent, fines and informal rental attempts.</li>
               <li>Only then discuss reserved private spots, access, price and poor-fit conditions.</li>
@@ -400,7 +439,7 @@ export default function MilestoneTwo() {
           <SectionHeading
             tag="04.2 / Interview guide"
             title="Questions we asked"
-            desc="Common question bank used across interviews. Exact wording varies by conversation; full phrasing is in each transcript PDF."
+            desc="This common question bank was used across interviews. Exact wording varies by conversation, and the full phrasing is available in each transcript PDF."
           />
           <div className="grid lg:grid-cols-2 gap-5">
             <article className="glass p-7">
@@ -428,7 +467,7 @@ export default function MilestoneTwo() {
           <SectionHeading
             tag="04.3 / Results"
             title="Findings"
-            desc={`Patterns from ${interviewStats.total} interviews. Quotes and details live in the evidence cards; participant labels show independent sources.`}
+            desc={`Patterns from ${interviewStats.total} interviews. Quotes and details are included in the evidence cards. Participant labels identify each source.`}
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
@@ -438,23 +477,23 @@ export default function MilestoneTwo() {
               ],
               [
                 "Searching is a recurring cost",
-                "Drivers independently described 10–25 minute searches near home or destination (Denis, Lorena, George, W-P1, W-P2, W-P4). One recent central-Bucharest trip took about 20 minutes to find parking (W-P4). Early arrival or weekends can be easier (Lorena, W-P1).",
+                "Drivers independently described 10–25 minute searches near home or a destination (Participants 3, 4, 5, 6, 7, and 9). One recent central-Bucharest trip took about 20 minutes to find parking (Participant 9). Early arrival or weekends can be easier (Participants 4 and 6).",
               ],
               [
                 "Workarounds already exist",
-                "Paid lots under time pressure, metro/Bolt/Uber instead of driving, leaving earlier, blocking cars with a phone number in Regie (W-P1), informal monthly rentals via neighbors/colleagues. W-P4 estimates 80–100 lei monthly on parking, plus Bolt rides to avoid searching.",
+                "Paid lots under time pressure, metro/Bolt/Uber instead of driving, leaving earlier, blocking cars with a phone number in Regie (Participant 6), and informal monthly rentals through neighbors or colleagues. Participant 9 estimates 80–100 lei monthly on parking, plus Bolt rides to avoid searching.",
               ],
               [
                 "Informal rental market is trust-based",
-                "Cristina rented to a colleague; George and W-P2 already rent monthly; Andra found Pipera supply via a colleague after OLX failed. OLX/Facebook often unreliable or low-trust (Cristina, Andra, W-P3).",
+                "Participants 2, 5, and 7 already rent parking monthly. Participant 1 found a spot in Pipera through a colleague after OLX did not work. Participants 1, 2, and 8 described trust concerns or unreliable listings on OLX and Facebook.",
               ],
               [
                 "Owner blockers for hourly P2P",
-                "Barrier/remote access, stranger risk, admin/rules, overtime/overstay, and reclaiming access (Andra, Cristina, W-P3, W-P4). W-P4 would lend the spot to a trusted neighbor but worries about strangers, damage, and returning before a booking ends.",
+                "Barrier or remote access, stranger risk, building rules, overstay, and reclaiming access are concerns for Participants 1, 2, 8, and 9. Participant 9 would lend the spot to a trusted neighbor but worries about strangers, damage, and returning before a booking ends.",
               ],
               [
                 "Price & commitment signals",
-                "Monthly anchors ~200–350 lei / ~50€. George: ~20–25 lei for 2h guaranteed nearby feels ok; 40–50 lei/hour loses to Uber. Denis: pays only if near and guaranteed free.",
+                "Monthly price references ranged from about 200–350 lei to €50. Participant 5 said around 20–25 lei for two guaranteed hours nearby felt reasonable. At 40–50 lei per hour, Uber seemed like a better option. Participant 3 would pay only for a nearby space that is guaranteed to be available.",
               ],
             ].map(([title, text]) => (
               <article key={title} className="glass p-6">
@@ -466,7 +505,7 @@ export default function MilestoneTwo() {
           <div className="glass p-7 mt-5">
             <h3 className="font-bold text-lg">Surprises and open questions</h3>
             <p className="muted text-sm mt-3">
-              Multi-spot landlords (W-P3) already monetize via apartments and
+              Participant 8 already rents parking spaces with apartments and
               are cautious about short stays. Some demand is hyper-local (Regie,
               hospital belts) where private rentable inventory may be scarce.
               We still lack a paid commitment test and denser owner coverage
@@ -487,7 +526,7 @@ export default function MilestoneTwo() {
             {[
               [
                 "Before",
-                "Assumed a city-wide hourly P2P marketplace was the primary fit: drivers book strangers’ idle spots by the hour; owners casually list leftover time.",
+                "We assumed a city-wide hourly peer-to-peer marketplace was the primary fit. Drivers would book strangers’ unused spaces by the hour, and owners would list spaces whenever they were free.",
               ],
               [
                 "Evidence",
@@ -525,7 +564,7 @@ export default function MilestoneTwo() {
             <div className="grid md:grid-cols-2 gap-4 mt-6">
               {[
                 ["Yes — problem is confirmed", "Multiple drivers independently described recent, costly parking searches and workarounds without being pitched ParkX first."],
-                ["Yes — first narrow use cases exist", "Examples: guaranteed near-destination evening parking; monthly daytime listing for idle residential spots; dense zones like Regie / hospital belts."],
+                ["Yes — first narrow use cases exist", "Possible use cases include guaranteed evening parking near a destination, daytime monthly rentals for unused residential spaces, and dense areas such as Regie or hospital districts."],
                 ["Not yet — supply constraints", "Owner interviews show access, remotes, trust and preference for stable tenants. Hourly stranger booking is not obviously the first sellable wedge."],
                 ["Not yet — no payment commitment", "We have stated willingness and price anchors, but no deposit, pre-order or live booking yet."],
               ].map(([title, text]) => (

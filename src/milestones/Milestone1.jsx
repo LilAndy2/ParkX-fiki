@@ -118,7 +118,7 @@ const business = [
   {
     title: "Customer segments",
     icon: Users,
-    text: "Drivers seeking convenient hourly parking; owners with unused private parking spaces. See the Customer segments chapter for details.",
+    text: "Drivers seeking convenient hourly parking and owners with unused private parking spaces. See the Customer segments chapter for details.",
   },
   {
     title: "Competition",
@@ -348,7 +348,7 @@ export default function MilestoneOne() {
                 [
                   Wallet,
                   "Earn from unused space",
-                  "Owners monetize idle spaces; ParkX takes a commission.",
+                  "Owners monetize idle spaces. ParkX takes a commission.",
                 ],
               ].map(([Icon, title, desc], i) => (
                 <div className="glass p-6" key={title}>
@@ -516,7 +516,7 @@ export default function MilestoneOne() {
                 ))}
               </div>
               <p className="text-xs text-slate-500 mt-5">
-                Only the commission is planned for launch; the other streams are
+                Only the commission is planned for launch. The other streams are
                 options to test after we reach enough listings and bookings.
               </p>
             </div>
