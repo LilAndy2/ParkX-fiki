@@ -5,7 +5,6 @@ export const interviews = [
     "method": "audio",
     "segment": "Owner with a private spot in Sector 6 who also rents a spot for work in Pipera",
     "side": "both",
-    "date": "30 Oct 2026, 17:30–17:40",
     "interviewer": "Andrei M.",
     "audio": "/evidence/m2/Conversatii Audio/Andra/Interviu Andra.mp3",
     "pdf": "/evidence/m2/Conversatii Audio/Andra/Interviu Andra.pdf",
@@ -23,7 +22,6 @@ export const interviews = [
     "method": "audio",
     "segment": "Owner — basement parking spot unused during the day",
     "side": "owner",
-    "date": "31 Oct 2026",
     "interviewer": "Andrei L.",
     "audio": "/evidence/m2/Conversatii Audio/Cristina/interviu cristina.mp3",
     "pdf": "/evidence/m2/Conversatii Audio/Cristina/Interviu Cristina.pdf",
@@ -41,7 +39,6 @@ export const interviews = [
     "method": "audio",
     "segment": "Driver who frequently drives in Bucharest and parks on the street near home",
     "side": "driver",
-    "date": "31 Oct 2026",
     "interviewer": "Andrei L.",
     "audio": "/evidence/m2/Conversatii Audio/Denis/interviu denis.mp3",
     "pdf": "/evidence/m2/Conversatii Audio/Denis/Interviu Denis.pdf",
@@ -59,7 +56,6 @@ export const interviews = [
     "method": "audio",
     "segment": "Driver who lives in Crângași, drives a few times per week, and parks on the street at home",
     "side": "driver",
-    "date": "31 Oct 2026",
     "interviewer": "Andrei L.",
     "audio": "/evidence/m2/Conversatii Audio/Lorena/interviu Lorena.mp3",
     "pdf": "/evidence/m2/Conversatii Audio/Lorena/Interviu Lorena.pdf",
@@ -77,7 +73,6 @@ export const interviews = [
     "method": "whatsapp",
     "segment": "Driver who works in Floreasca and rents a parking spot near home",
     "side": "driver",
-    "date": "31 Oct 2026, 18:12–18:52",
     "interviewer": "Andrei M.",
     "audio": null,
     "pdf": "/evidence/m2/Conversatii mesaje/George/Interviu_2_anonimizat.pdf",
@@ -98,7 +93,6 @@ export const interviews = [
     "method": "whatsapp",
     "segment": "Driver — commute Otopeni → Regie",
     "side": "driver",
-    "date": "31 Oct 2026, 15:51–16:20",
     "interviewer": "Vanessa",
     "audio": null,
     "pdf": "/evidence/m2/Conversatii mesaje/Pers1_Vanessa/Interviu_1.pdf",
@@ -120,7 +114,6 @@ export const interviews = [
     "method": "whatsapp",
     "segment": "Driver who travels daily across Bucharest and Ilfov to hospitals and rents a home spot in Sector 4",
     "side": "driver",
-    "date": "31 Oct 2026, from 16:56",
     "interviewer": "Vanessa",
     "audio": null,
     "pdf": "/evidence/m2/Conversatii mesaje/Pers2_Vanessa/Interviu_2.pdf",
@@ -142,7 +135,6 @@ export const interviews = [
     "method": "whatsapp",
     "segment": "Owner — multiple private spots rented with apartments (Grozăvești, Lujerului, Uverturii)",
     "side": "owner",
-    "date": "31 Oct 2026, 18:19–19:21",
     "interviewer": "Vanessa",
     "audio": null,
     "pdf": "/evidence/m2/Conversatii mesaje/Pers3_Vanessa/Interviu_3.pdf",
@@ -165,7 +157,6 @@ export const interviews = [
     "method": "whatsapp",
     "segment": "Owner and driver with a private parking spot in Drumul Taberei who drives into central Bucharest",
     "side": "both",
-    "date": "31 Oct 2026",
     "interviewer": "Vanessa",
     "audio": null,
     "pdf": "/evidence/m2/Conversatii mesaje/Pers4_Vanessa/Interviu_4.pdf",
@@ -233,7 +224,6 @@ displayName: "Persoana 10",
 method: "whatsapp",
 segment: "Driver who avoids peak traffic and usually parks in central areas on weekends",
 side: "driver",
-date: "31 Oct 2026",
 interviewer: "Costin",
 audio: null,
 pdf: "/evidence/m2/Conversatii mesaje/Pers1_Costin/Interviu_Participant1.pdf",
@@ -282,7 +272,6 @@ displayName: "Persoana 11",
 method: "whatsapp",
 segment: "Driver who commutes by car and sometimes visits clients in unfamiliar areas",
 side: "driver",
-date: "31 Oct 2026",
 interviewer: "Costin",
 audio: null,
 pdf: "/evidence/m2/Conversatii mesaje/Pers2_Costin/Interviu_Participant2.pdf",
@@ -334,7 +323,6 @@ displayName: "Persoana 12",
 method: "whatsapp",
 segment: "Driver who uses Waze parking suggestions when traveling to unfamiliar areas",
 side: "driver",
-date: "31 Oct 2026",
 interviewer: "Costin",
 audio: null,
 pdf: "/evidence/m2/Conversatii mesaje/Pers3_Costin/Interviu_Participant3.pdf",
@@ -386,7 +374,6 @@ displayName: "Persoana 13",
 method: "whatsapp",
 segment: "Driver who often visits unfamiliar areas and sometimes parks outside marked spaces",
 side: "driver",
-date: "31 Oct 2026",
 interviewer: "Costin",
 audio: null,
 pdf: "/evidence/m2/Conversatii mesaje/Pers4_Costin/Interviu_Participant4.pdf",
@@ -428,7 +415,52 @@ Participant 4: Card plătesc, în general. Prin aplicație sau la automat, dacă
 
 Costin: Mai e ceva legat de parcare care te enervează și nu te-am întrebat?
 Participant 4: Nu, cam asta e.`
-  }
+  },
+  {
+    id: "A-Ania",
+    displayName: "Ania",
+    method: "audio",
+    segment: "Driver — commutes to university near Piața Universității and drives an electric car",
+    side: "driver",
+    interviewer: "Andrei L.",
+    audio: "/evidence/m2/Conversatii Audio/Ania/Interviu ania.mp3",
+    pdf: "/evidence/m2/Conversatii Audio/Ania/Interviu Ania.pdf",
+    screenshots: [],
+    highlights: [
+      "Drives to Piața Universității about five days a week and often spends 15–20 minutes searching for parking; arriving earlier is one workaround.",
+      "Her electric car currently gives her parking benefits, but a city subscription still does not guarantee a dedicated spot; she sometimes pays for private underground parking.",
+      "She does not want to rent a courtyard spot because sharing the gate key and moving cars blocked in the yard would be complicated.",
+      "She would consider paying for reliable parking near university, particularly on workshop days when she has things to carry.",
+    ],
+    transcript: `Andrei L.: Bună, Ania! Îți mulțumesc că ai vrut să ne auzim. Aș vrea să te întreb, în primul rând, în ce sector locuiești și unde îți lași de obicei mașina peste noapte? Ania: În Sectorul 1 și în fața casei sau în curte. Andrei L.: Ok. Asta înseamnă că ai mai multe locuri de parcare? Ania: Teoretic, da. Andrei L.: În regulă. Săptămâna trecută, să spunem, în câte zile ai condus prin București? Ania: Să zic, din șapte, vreo cinci zile. Andrei L.: Și care a fost experiența ta legat de locurile de parcare? Ania: Proastă. Andrei L.: Poți să îmi detaliezi puțin? Ania: Păi, având în vedere că majoritatea drumurilor pe care le fac sunt până în Piața Universității, unde trebuie să mă duc la facultate, stau să caut loc de parcare pe acolo în jur de cincisprezece, douăzeci de minute.
+
+Andrei L.: Și îți ia atât de mult să cauți un loc de parcare pentru că nu găsești un loc care să fie fără plată sau pentru că nu există disponibilitate din acest punct de vedere? Ania: Pentru că sunt toate ocupate. Andrei L.: Deci nu este vorba despre o sumă la mijloc sau aspecte de genul? Ania: Nu, pentru că deocamdată am gratuitate, pentru că am electrică. Andrei L.: Ok, super, în regulă. Ce ai făcut, de exemplu, în ultima lună ca să găsești un loc de parcare mai ușor? Ania: Am observat că, unu la mână, există o tendință să găsesc mai ușor dacă vin mult mai devreme la facultate. Adică trebuie să vin și la opt dimineața și poate găsesc mai repede. În rest, trebuie doar să stau să fac cercuri pe acolo până când, să îmi doresc să iasă unul și să-mi facă loc. Andrei L.: În ultimele douăsprezece luni ai primit amendă de parcare sau ți-a fost ridicată mașina? Ania: În ultimele douăsprezece luni nu, dar anul trecut da. Andrei L.: Din motivul parcării? Ania: Da. Andrei L.: Ce s-a întâmplat mai exact și cam cât te-a costat în total? Ania: Nu a fost amendă, amendă. A fost un avertisment, pentru că a fost prima dată când am primit așa ceva. Adică nu a fost aia cu să-mi facă poză la mașină și să scrie date și chestii. A fost efectiv doar un avertisment. Și a fost pentru că recent, în perioada aia, au schimbat locurile de parcare de pe o parte a străzii în locuri speciale pentru autovehicule autorizate, în sensul că acolo aveau voie să parcheze doar poliția. Și am parcat acolo și numai eu am primit avertisment, deși nu eram eu singura care nu era poliție parcată acolo. M-a găsit pe mine Laurențiu, că așa îl cheamă pe polițist. Andrei L.: Ți s-a întâmplat, de exemplu, vreodată să renunți la un drum cu mașina sau să întârzii din cauza parcării? Ania: Da. Adică mi s-a întâmplat să întârzii la atelier și o oră pentru că n-am găsit loc de parcare.
+
+Andrei L.: Și te-ai gândit vreodată să abordezi soluția să închiriezi un loc de parcare undeva? Ania: În București nu ai cum să închiriezi loc de parcare. Ai cum să-ți faci abonament la primărie, lunar sau anual, doar că asta nu-ți garantează și un loc de parcare. Îți garantează că nu mai trebuie să plătești pe loc. Tu plătești lunar un loc de parcare, dar tot trebuie să-l găsești cumva. Adică nu îmi scrie mie pe nume, pe un loc de parcare, numărul meu de la mașină. Tot trebuie să-l găsesc. Mi s-a întâmplat să nu găsesc și chiar trebuia să parchez, să mă duc la Universitate, la aia subterană, unde e de vreo trei ori mai scump să plătesc, că acolo nu am gratuitate, e privată. Andrei L.: În ultima lună sau în ultimul an, aproximativ cam cât ai plătit în total pe parcare, fie că ai mers la subterană, fie în alte locuri unde aveai nevoie? Ania: Având în vedere, din nou, că am electrică, am plătit parcarea când a fost nevoie să mă duc la subterană. Cred că am dat două milioane. Andrei L.: Asta în ultima lună sau în ultimul an? Ania: An, să zicem. Un an. Andrei L.: Și îmi ziceai că oarecum ai mai multe locuri de parcare. Locurile respective de parcare sunt ocupate pe tot timpul zilei? Ania: Acasă? Andrei L.: Da. Ania: Dacă suntem toți trei acasă, da. Avem mai multe mașini. Andrei L.: Deci practic nu aveți un interval fix în care să ziceți că sunteți nevoiți să plecați de acasă și atunci rămâne locul respectiv de parcare liber. Ania: Dacă plecăm de acasă în același timp, sunt goale doar dacă e în curte, adică în fața casei. Dacă e, o pun pe lângă trotuar, pe stradă. Adică nu e loc de parcare semnalizat cu vopsea și cu număr sau ceva. Andrei L.: Dacă tu ai pleca la un moment dat de acasă și știi că trebuie să mergi la facultate, te-ai gândit vreodată să închiriezi locul respectiv sau spațiul respectiv? Ania: Nu.
+
+
+Andrei L.: Izolat? Ania: Izolat, da, scuze. La mine la facultate, acum unde parchez eu pe toată strada aia vrea să o facă pietonală. Ar scoate toate locurile de parcare de acolo și ar face-o pietonală. Idee extrem de proastă la cât de aglomerată este zona aia. Și nu numai oamenii care vin la facultate acolo cu mașina, că din câte am văzut chiar nu sunt foarte mulți studenți care parchează acolo. Sunt oameni care lucrează, sunt oameni de la blocuri care probabil au abonamente cu primăria și își pun mașinile în fața blocului. Păi ăia unde îi pui, la subterană? Adică eu am dat o dată 60 de lei pe patru ore. Andrei L.: Și de exemplu, dacă strada respectivă se va face pietonală... Ania: Vrea să se facă. Nu știu dacă chiar o s-o facă. Am văzut un proiect. Andrei L.: Să considerăm că se va aproba proiectul respectiv. Și totodată, tu, așa cum ai spus, de la o anumită dată nu vei mai avea gratuitate, chiar dacă ai mașină electrică. Ai mai folosi mașina ca să te deplasezi până în punctele în care vrei în continuare? Ania: Nu aș mai folosi-o așa de des. Andrei L.: Asta pentru că nu ai siguranță? Ania: Pentru că sunt chitroasă și nu vreau să plătesc. Andrei L.: Poți să mai zici o dată, te rog? Ania: Pentru că sunt chitroasă și nu vreau să plătesc. Andrei L.: Care ar fi, să zicem, un preț pe care l-ai plăti pentru a ști sigur că vreau să merg la facultate, stau cinci ore și știu sigur că locul respectiv de parcare este al meu? Ania: Cum e și în alte sectoare, un leu pe oră. Aș plăti asta. Am văzut, de exemplu, în Sectorul 3 e un leu pe oră. Am văzut asta, nu la noi. Cinci lei ora. Andrei L.: De acord, e un preț destul de mare. Și practic, dacă stai cinci ore pe zi, cinci zile pe săptămână, cinci lei pe zi, cinci zile, douăzeci de zile, asta ar ajunge undeva la cinci sute de lei? Ania: Păi mai bine decât ori cinci. Andrei L.: Deci ai fi dispusă să plătești cinci sute de lei lunar ca să poți să parchezi, nu neapărat unde vrei, dar ca să găsești un loc de parcare ok?
+
+Ania: Da. Și asta, dar de exemplu în unele zile nu stau așa de mult la facultate. Să zici că vin la un curs, două. Singurele chestii care mă bat pe mine sunt zilele în care am atelierul, în care da, stau mai mult. Aș avea chestii de cărat și mi-e mai comod să vin cu mașina decât să le car cu metroul. Andrei L.: În regulă. Cam atât am avut să te întreb. Îți mulțumesc pentru timpul acordat. Ania: Mulțumesc și eu că m-ai ascultat.`,
+  },
+  {
+    id: "A-Alex",
+    displayName: "Alex",
+    method: "audio",
+    segment: "Driver and owner of an unused basement space; pays for a guaranteed office space",
+    side: "both",
+    interviewer: "Andrei L",
+    audio: "/evidence/m2/Conversatii Audio/Alex/Interviu Alex.mp3",
+    pdf: "/evidence/m2/Conversatii Audio/Alex/Interviu Alex.pdf",
+    screenshots: [],
+    highlights: [
+      "Drives to the office three or four days a week and pays 350 lei/month for a guaranteed private space; reliability and an invoice matter for work.",
+      "For other trips, prefers free or low-cost public parking and the metro over paying for private parking.",
+      "An unused second basement space remains unrented after a neighbor offered 250–300 lei/month; contract and tax uncertainty were the blockers.",
+      "Would consider up to 450 lei/month for a reliable space near the office with an invoice, and agreed to test a prototype.",
+    ],
+    transcript: "Andrei L: Mulțumesc că ai acceptat. Când ai condus ultima dată prin București și unde ai avut treabă? Alex: Azi-dimineață, am mers la birou, într-o zonă cu multe clădiri de birouri. Conduc de obicei trei sau patru zile pe săptămână. În rest merg cu metroul. Andrei L: Săptămâna trecută, în câte zile ai condus și unde ai parcat? Alex: În patru zile. De trei ori la birou, o dată prin oraș, pentru niște treburi. La birou parchez într-o parcare privată, iar în oraș pe stradă, în locurile de la primărie. Andrei L: Unde lași mașina peste noapte? Alex: La subsolul blocului, pe locul meu de parcare, cumpărat odată cu apartamentul. Mai am un loc, tot în subsol, luat pentru mama. Ea a renunțat să mai conducă acum vreun an și locul stă gol. Andrei L: Povestește-mi cum a fost ultima dată când a stat gol locul acela. Alex: Practic tot timpul. O singură dată, acum două luni, l-a folosit un prieten pentru un weekend, gratis. Altfel e liber toată săptămâna. Andrei L: Ți-a cerut vreodată cineva să i-l dai sau ai primit vreo ofertă? Alex: Da, acum vreo trei luni un vecin din scara de alături m-a întrebat dacă i-l închiriez. Mi-a zis că ar plăti 250–300 de lei pe lună. Andrei L: Ce ai răspuns atunci? Alex: I-am zis că mă gândesc și apoi nu am mai revenit. Nu am vrut să mă bag. Andrei L: Ce te-a oprit, concret? Alex: Partea cu actele. Ar trebui contract, ar trebui să declar banii și nu știu exact cum. Pentru 250–300 de lei pe lună nu merită să-mi bat capul cu așa ceva. Andrei L: Ce ai făcut ca să afli cum se procedează? Alex: M-am uitat vreo douăzeci de minute pe internet, am citit un articol și o discuție pe un forum. Am înțeles că ar trebui să declar venitul și că s-ar putea să mi se ceară ceva în plus. Nu am vorbit cu un contabil. Andrei L: Și locul a rămas cum era? Alex: Da, gol. Prefer să nu câștig nimic decât să am o bătaie de cap pe care nu o înțeleg. Andrei L: Acum să vorbim despre partea de condus. Cum ai ajuns să plătești parcarea de la birou? Alex: Acum vreo șase luni s-a închis parcarea unde parcam înainte. Am căutat vreo două săptămâni pe OLX și am sunat cinci anunțuri. Doi nu mai aveau locuri, unul nu răspundea. L-am luat pe cel de acum, după ce am mers să-l văd. Plătesc 350 de lei pe lună. Andrei L: Cum se face plata și ce acte primești? Alex: Plătesc cash, la începutul lunii, direct omului de acolo. Fără chitanță, fără contract. Nu mă deranjează prea tare, dar mă gândesc ce fac dacă se întâmplă ceva cu mașina sau dacă îmi spune că nu mai are loc. Andrei L: Ți s-a întâmplat vreodată ceva de genul? Alex: O dată mi-a rămas mașina blocată, fiindcă omul lăsase un camion în fața ei. Am sunat și a rezolvat în 20 de minute, dar am întârziat la o ședință. Andrei L: De ce ai ales un abonament privat, și nu un loc pe stradă lângă birou? Alex: Pentru că dimineața am ședințe fixe și nu pot să mă învârt 15 minute. Acolo plătesc ca să fiu sigur că am loc. Dar numai pentru birou. Andrei L: Și în rest, când mergi în oraș? Povestește-mi ultima dată. Alex: Sâmbăta trecută am fost în centru. Am parcat la a doua tură, într-o zonă cu locuri de la primărie, cu parcometru. Am căutat vreo 6–7 minute, am parcat la 5 minute de mers pe jos și am plătit câțiva lei prin SMS. Andrei L: Și dacă nu găseai locul acela? Alex: Mai căutam încă 5 minute sau parcam mai departe. Nu m-aș fi dus într-o parcare privată. Mi se pare un lux pentru ce primești. Andrei L: Ți s-a întâmplat vreodată să ai o amendă sau să-ți fie blocată mașina? Alex: O dată, acum 8 luni, 200 de lei, când parcasem pe stradă lângă birou cât timp căutam altceva. De atunci am abonamentul privat. Cred că a fost vina mea, nu a sistemului. Andrei L: Cât ai cheltuit luna trecută pe parcare, în total? Alex: Cam 400 de lei: 350 abonamentul și restul parcometre când am avut treabă în centru. Andrei L: Ai renunțat vreodată la un drum cu mașina din cauza parcării? Alex: Nu din cauza parcării în sine. Dacă știu că merg într-o zonă foarte aglomerată, merg direct cu metroul. Așa am rezolvat problema, fără să plătesc ceva în plus. Andrei L: Ai mai căutat un loc de închiriat lunar, în afară de cel de la birou? Alex: Nu. Pentru acasă nu am nevoie, am loc. Iar pentru restul zilelor prefer variantele de la primărie, gratis sau aproape. Andrei L: (spre final) Lucrez la o aplicație în care oamenii își pot lista locurile de parcare și alții le pot închiria pe oră sau pe lună. Ce părere ai? Alex: Pentru birou, probabil că mi-ar folosi: aș plăti să găsesc ușor un loc lângă birou, cu plata prin card și factură, ca să pot deconta de la firmă. Pentru restul drumurilor nu: prefer să mai caut 5 minute un loc de la primărie, atâta timp cât se poate și e gratis. Iar ca proprietar nu mi-aș pune locul pe așa ceva. Rămâne venitul pe numele meu și tot trebuie să-l declar, chiar dacă aplicația ar face contractul. Andrei L: Înțeleg. Ce ar trebui să se întâmple ca să plătești mai mult de 350 de lei pentru un loc lângă birou? Alex: Să fie chiar lângă birou, să fiu sigur că am loc în fiecare zi și să am factură. Poate 450 de lei, dar nu mai mult. Andrei L: Dacă aș trimite peste o lună un prototip, ai testa partea de căutare a unui loc lângă birou? Și m-ai putea pune în legătură cu doi colegi care plătesc acum pentru parcare? Alex: Da, trimite-mi. Și îți dau numerele a doi colegi, amândoi plătesc cam 300–400 de lei pe lună pentru locuri în zonă.",
+  },
 ];
 
 export const interviewStats = {
@@ -437,4 +469,5 @@ export const interviewStats = {
   whatsapp: interviews.filter((i) => i.method === "whatsapp").length,
   drivers: interviews.filter((i) => i.side === "driver" || i.side === "both").length,
   owners: interviews.filter((i) => i.side === "owner" || i.side === "both").length,
+  both: interviews.filter((i) => i.side === "both").length,
 };
