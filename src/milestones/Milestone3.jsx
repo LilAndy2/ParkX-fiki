@@ -1,11 +1,35 @@
 import React from "react";
-import { ArrowRight, ArrowUpRight, CarFront, ParkingCircle } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  CarFront,
+  LayoutTemplate,
+  MousePointerClick,
+  ParkingCircle,
+  SearchCheck,
+  Sparkles,
+} from "lucide-react";
 import SectionHeading from "../components/SectionHeading.jsx";
 
 const figmaPrototypePath =
   "GFbZHJfouVkcyMYhAYc4nz/Wireframe-IAS?node-id=2003-471&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2003%3A444";
 const figmaPrototypeUrl = `https://www.figma.com/proto/${figmaPrototypePath}`;
 const figmaEmbedUrl = `https://embed.figma.com/proto/${figmaPrototypePath}&embed-host=parkx`;
+const landingPageUrl = "https://park-x-landing-page.vercel.app/";
+
+const landingPageSections = [
+  ["01", "A clear promise", "The hero introduces ParkX as a way to find a private spot close to where people are going, while also making the owner opportunity visible."],
+  ["02", "A simple driver flow", "The three ideas—find your spot, book by the hour and park with confidence—turn the marketplace idea into three easy-to-understand steps."],
+  ["03", "A second-sided value proposition", "The owner section explains how unused driveway, garage or apartment-space hours can become extra income without losing control."],
+  ["04", "One focused conversion", "The waitlist gives visitors a low-friction next step while ParkX is still being prepared for launch in Bucharest."],
+];
+
+const landingPageProcess = [
+  ["Start with the findings", "We used the discovery work from Milestone 2 as the content brief: drivers lose time circling, owners have idle capacity, and trust and convenience matter to both sides."],
+  ["Choose the story", "We organized the page around the moment a driver wants to arrive, then introduced the owner side as a complementary opportunity rather than making visitors understand a marketplace first."],
+  ["Make the product tangible", "A stylized map, price pins and a reserved-spot state give visitors a quick visual sense of the future product before the full app exists."],
+  ["Build and publish", "We implemented the page as a responsive standalone experience, checked the main sections on desktop and mobile layouts, and deployed it to Vercel for sharing and feedback."],
+];
 
 const driverScreens = [
   {
@@ -215,11 +239,10 @@ export default function Milestone3() {
             <span className="text-mint">The skeleton of ParkX.</span>
           </h1>
           <p className="mt-6 text-lg text-slate-300 max-w-3xl leading-relaxed">
-            {driverScreens.length + ownerScreens.length} mobile screens
-            built as an interactive prototype in Figma. They show what each
-            view contains, where features live and what happens when a button
-            is pressed, for both sides of the marketplace: drivers and
-            parking-space owners.
+            {driverScreens.length + ownerScreens.length} mobile screens built
+            as an interactive prototype in Figma, followed by a public landing
+            page that turns the product idea into a clear story for drivers,
+            parking-space owners and early adopters.
           </p>
         </div>
       </section>
@@ -230,6 +253,9 @@ export default function Milestone3() {
       >
         {[
           ["wireframe-overview", "Overview"],
+          ["landing-page", "Landing page"],
+          ["landing-page-preview", "Live preview"],
+          ["landing-page-process", "Process"],
           ["wireframe-prototype", "Interactive prototype"],
           ["wireframe-driver", "Driver flow"],
           ["wireframe-owner", "Owner flow"],
@@ -276,10 +302,116 @@ export default function Milestone3() {
         </div>
       </section>
 
-      <section id="wireframe-prototype" className="section">
+      <section id="landing-page" className="section">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
-            tag="02 / Try it"
+            tag="02 / Landing page"
+            title="From product idea to public story"
+            desc="The landing page packages the marketplace hypothesis into a short, visual introduction: what ParkX solves, how it works, why owners should care and how early users can join."
+          />
+          <div className="grid md:grid-cols-2 gap-5 mb-5">
+            <article className="glass p-7">
+              <LayoutTemplate className="text-mint mb-5" size={26} />
+              <h3 className="text-xl font-bold mb-3">What the page communicates</h3>
+              <p className="muted text-sm">
+                The page is designed to make the value proposition understandable
+                before the app is available. It speaks to both sides of the
+                marketplace without asking the visitor to choose a complex path.
+              </p>
+              <a
+                href={landingPageUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 mt-6 text-sm font-semibold text-mint hover:underline"
+              >
+                Open the landing page externally <ArrowUpRight size={14} />
+              </a>
+            </article>
+            <article className="glass p-7">
+              <Sparkles className="text-mint mb-5" size={26} />
+              <h3 className="text-xl font-bold mb-3">Why it follows the wireframes</h3>
+              <p className="muted text-sm">
+                The wireframes describe the product experience after someone
+                enters the app. The landing page comes one step earlier: it
+                creates enough understanding and interest for someone to join
+                the waitlist or explore the product direction.
+              </p>
+            </article>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {landingPageSections.map(([number, title, text]) => (
+              <article key={number} className="glass p-5">
+                <span className="text-slate-600 font-bold">{number}</span>
+                <h3 className="font-bold mt-3">{title}</h3>
+                <p className="muted text-sm mt-3">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="landing-page-preview" className="section bg-white/[.02]">
+        <div className="mx-auto max-w-6xl px-5">
+          <SectionHeading
+            tag="03 / Live preview"
+            title="See the landing page in context"
+            desc="The deployed Vercel version is embedded below so the milestone documents the actual public experience. Use the external link if you want to browse it in a full browser tab."
+          />
+          <div className="glass p-3 md:p-4">
+            <iframe
+              title="ParkX landing page preview"
+              src={landingPageUrl}
+              className="w-full h-[calc(100svh-8rem)] min-h-[640px] max-h-[1000px] rounded-xl bg-black/30"
+              loading="lazy"
+            />
+          </div>
+          <a
+            href={landingPageUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 mt-5 text-sm font-semibold text-mint hover:underline"
+          >
+            Open the live landing page <ArrowUpRight size={14} />
+          </a>
+        </div>
+      </section>
+
+      <section id="landing-page-process" className="section">
+        <div className="mx-auto max-w-6xl px-5">
+          <SectionHeading
+            tag="04 / Process"
+            title="From findings to a first public page"
+            desc="The landing page was developed as a lightweight validation surface: a way to explain the concept, collect early interest and learn which promise resonates before building the complete marketplace."
+          />
+          <div className="grid md:grid-cols-2 gap-4">
+            {landingPageProcess.map(([title, text], index) => (
+              <article key={title} className="glass p-6">
+                <div className="flex items-center gap-3">
+                  <span className="text-mint text-xs font-bold tracking-widest">
+                    STEP {String(index + 1).padStart(2, "0")}
+                  </span>
+                  {index === 0 && <SearchCheck size={16} className="text-mint" />}
+                  {index === 1 && <MousePointerClick size={16} className="text-mint" />}
+                  {index === 2 && <LayoutTemplate size={16} className="text-mint" />}
+                  {index === 3 && <ArrowUpRight size={16} className="text-mint" />}
+                </div>
+                <h3 className="font-bold mt-3">{title}</h3>
+                <p className="muted text-sm mt-3">{text}</p>
+              </article>
+            ))}
+          </div>
+          <p className="text-xs text-slate-500 mt-5">
+            This page is an early public expression of the ParkX concept. The
+            copy and visuals are intended to communicate and validate the
+            direction; they do not represent a finished production product.
+          </p>
+        </div>
+      </section>
+
+      <section id="wireframe-prototype" className="section bg-white/[.02]">
+        <div className="mx-auto max-w-6xl px-5">
+          <SectionHeading
+            tag="05 / Try it"
             title="Interactive prototype"
             desc="The clickable Figma prototype, embedded below. Tap the buttons on the screen to move between views, the same way the app would work."
           />
@@ -306,7 +438,7 @@ export default function Milestone3() {
       <section id="wireframe-driver" className="section bg-white/[.02]">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
-            tag="03 / Driver flow"
+            tag="06 / Driver flow"
             title="Finding and booking a spot"
             desc="From the start screen to parking: search, compare, book and get in. The bottom tab bar (Caută, Rezervări, Profil) links the main driver screens."
           />
@@ -321,7 +453,7 @@ export default function Milestone3() {
       <section id="wireframe-owner" className="section">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
-            tag="04 / Owner flow"
+            tag="07 / Owner flow"
             title="Listing a spot and earning from it"
             desc="Owners reach this flow from the start screen or from the driver profile. The bottom tab bar (Locuri, Câștiguri, Profil) links the main owner screens."
           />
@@ -336,7 +468,7 @@ export default function Milestone3() {
       <section id="wireframe-discovery" className="section bg-white/[.02]">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
-            tag="05 / Rationale"
+            tag="08 / Rationale"
             title="From discovery to screens"
             desc="Several features in the wireframe come directly from the Milestone 2 interviews and questionnaire."
           />
