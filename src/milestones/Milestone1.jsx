@@ -39,10 +39,10 @@ const team = [
     photo: "/Andrei L.jpeg",
   },
   {
-    name: "Boșoagă Costin",
+    name: "Ionescu Ioana",
     role: "Full Stack Developer",
-    email: "costinbosoaga3@gmail.com",
-    photo: "/Costin.jpg",
+    email: "ionescu.ioana@gmail.com",
+    photo: "/poza ioana.jpeg",
   },
 ];
 
@@ -441,13 +441,15 @@ export default function MilestoneOne() {
                   </div>
                   <h3 className="text-xl font-bold">{p.name}</h3>
                   <p className="text-mint text-sm mt-1 mb-4">{p.role}</p>
-                  <a
-                    href={`mailto:${p.email}`}
+                  {p.email && (
+                    <a
+                      href={`mailto:${p.email}`}
                       className="text-sm text-slate-400 flex items-start gap-2 hover:text-white"
                     >
                       <Mail size={15} className="shrink-0 mt-0.5" />
-                    <span className="min-w-0 break-all">{p.email}</span>
-                  </a>
+                      <span className="min-w-0 break-all">{p.email}</span>
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
