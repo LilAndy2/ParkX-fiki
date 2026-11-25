@@ -135,7 +135,11 @@ function EvidenceCard({ interview, participantNumber }) {
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-mint text-xs font-bold tracking-widest">
-            {interview.method === "audio" ? "AUDIO" : "WHATSAPP"}
+            {interview.method === "audio"
+              ? "AUDIO"
+              : interview.method === "document"
+                ? "DOCUMENT"
+                : "WHATSAPP"}
           </p>
           <h3 className="font-bold text-xl mt-2">
             Persoana {participantNumber}
@@ -163,7 +167,9 @@ function EvidenceCard({ interview, participantNumber }) {
 
       {interview.screenshots.length > 0 && (
         <div className="mt-5">
-          <p className="text-xs text-slate-500 mb-2">WhatsApp proof screenshots</p>
+          <p className="text-xs text-slate-500 mb-2">
+            {interview.method === "whatsapp" ? "WhatsApp proof screenshots" : "Interview proof photos"}
+          </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {interview.screenshots.map((src) => (
               <a key={src} href={encodeURI(src)} target="_blank" rel="noreferrer" className="block">
@@ -252,7 +258,8 @@ export default function MilestoneTwo() {
           <p className="mt-6 text-lg text-slate-300 max-w-3xl leading-relaxed">
             Record of ParkX customer discovery: {interviewStats.total} completed
             interviews ({interviewStats.audio} audio, {interviewStats.whatsapp}{" "}
-            WhatsApp), covering drivers and private-space owners in Bucharest.
+            WhatsApp, {interviewStats.document} written/document), covering
+            drivers and private-space owners in Bucharest.
             Findings below are tied to the interview records and evidence.
           </p>
         </div>
@@ -365,7 +372,8 @@ export default function MilestoneTwo() {
               We investigated two groups: drivers looking for convenient
               parking and owners of private spaces that are unused at certain
               times. We used audio interviews, WhatsApp message interviews,
-              and an online questionnaire with {surveyStats.total} responses.
+              written interview summaries, and an online questionnaire with
+              {surveyStats.total} responses.
               Participants were reached through personal networks and the
               questionnaire. Conversations started with past experiences and
               current workarounds before introducing ParkX-style ideas. We
@@ -377,7 +385,7 @@ export default function MilestoneTwo() {
             {[
               ["1. Select segments", "Drivers (commuters, residents, hospital/center trips) and private-space owners (idle daytime spots, multi-spot landlords)."],
               ["2. Recruit participants", "Personal outreach and an online questionnaire. Some respondents were invited to a follow-up interview."],
-              ["3. Collect information", `${surveyStats.total} questionnaire responses and ${interviewStats.total} interviews: ${interviewStats.audio} audio recordings and ${interviewStats.whatsapp} WhatsApp chats with screenshots.`],
+              ["3. Collect information", `${surveyStats.total} questionnaire responses and ${interviewStats.total} interviews: ${interviewStats.audio} audio recordings, ${interviewStats.whatsapp} WhatsApp chats and ${interviewStats.document} written/document summaries.`],
               ["4. Analyze and decide", "We compared demand and supply patterns, then considered product implications and readiness for validation."],
             ].map(([title, text]) => (
               <article key={title} className="glass p-6">
@@ -392,10 +400,9 @@ export default function MilestoneTwo() {
               Interviews focused on real past parking episodes, frequency,
               spending, fines, and current workarounds. Some earlier interviews
               also included follow-up questions about renting, access, or price.
-              Audio interviews captured recent parking experiences and
-              workarounds. Participant 15 added a regular office commuter’s
-              perspective on paying for a guaranteed space and an unused
-              private spot.
+              The 19 interview records capture both regular commuters and
+              private-space owners, as well as participants who experience
+              both sides of the parking problem.
             </p>
           </div>
         </div>
@@ -421,15 +428,13 @@ export default function MilestoneTwo() {
               <h3 className="font-bold text-xl">Drivers — demand side</h3>
               <p className="muted text-sm mt-3">
                 <span className="font-semibold text-slate-200">Participants:</span>{" "}
-                1, 3–7, 9–13, 14, and 15.
+                {interviewStats.drivers} interview records cover the driver
+                perspective.
               </p>
               <p className="muted text-sm mt-2">
-                Participant 6 commutes to Regie. Participant 7 drives regularly
-                to hospitals. Participant 1 looks for parking near work in
-                Pipera. Participants 10–13 described different experiences in
-                central and unfamiliar areas. Participant 14 commutes to
-                Piața Universității; Participant 15 is a regular office
-                commuter.
+                Participants commute to work and university, make personal and
+                shopping trips, visit hospitals or central areas, and sometimes
+                drive in unfamiliar neighborhoods.
               </p>
               <div className="mt-auto border-t border-white/10 pt-5">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-mint">
@@ -448,14 +453,13 @@ export default function MilestoneTwo() {
               </h3>
               <p className="muted text-sm mt-3">
                 <span className="font-semibold text-slate-200">Participants:</span>{" "}
-                1, 2, 8, 9, and 15.
+                {interviewStats.owners} interview records cover the owner
+                perspective.
               </p>
               <p className="muted text-sm mt-2">
-                Participant 1 has a space in a gated complex. Participant 2
-                has a spot that is unused during the day. Participant 8 owns
-                multiple spots, and Participant 9 owns a spot in Drumul
-                Taberei. Participant 15 has another basement space that is
-                usually unused.
+                The supply side includes owners of residential, basement,
+                courtyard and gated-complex spaces, as well as participants who
+                use private parking and control a second spot.
               </p>
               <div className="mt-auto border-t border-white/10 pt-5">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-mint">
@@ -475,8 +479,8 @@ export default function MilestoneTwo() {
               {[
                 `Channels: team members’ personal networks and an online questionnaire with ${surveyStats.total} responses, followed by interviews`,
                 "Eligibility: recent Bucharest parking struggle and/or control of a private spot",
-                `${interviewStats.total} conversations completed (dates not recorded)`,
-                `Methods mix: ${interviewStats.audio} audio + ${interviewStats.whatsapp} WhatsApp message interviews`,
+                `${interviewStats.total} conversations completed`,
+                `Methods mix: ${interviewStats.audio} audio + ${interviewStats.whatsapp} WhatsApp + ${interviewStats.document} written/document interviews`,
                 "Participants are anonymized in the interview evidence cards",
                 "Limitation: this was a convenience sample, so it is not statistically representative",
               ].map((item) => (
@@ -495,22 +499,28 @@ export default function MilestoneTwo() {
             tag="04.1 / Research methods"
             title="Research methods and process"
           />
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             <article className="glass p-6 border-mint/20">
               <h3 className="font-bold">Audio interviews</h3>
               <p className="muted text-sm mt-3">
-                Participants 1–4 and 14–15 took part in audio interviews. MP3
-                recordings and PDF transcripts are available in the evidence
-                cards.
+                {interviewStats.audio} audio interviews are included in the
+                evidence cards, with recordings or PDFs provided where available.
               </p>
             </article>
             <article className="glass p-6 border-mint/20">
               <h3 className="font-bold">WhatsApp message interviews</h3>
               <p className="muted text-sm mt-3">
-                Participants 5–13 took part in WhatsApp interviews. Chat
-                screenshots and PDF transcripts are available in the evidence
-                cards. Some participants had also completed the online
-                questionnaire.
+                {interviewStats.whatsapp} WhatsApp interviews are documented
+                through chat summaries or screenshots and linked to their
+                transcript evidence.
+              </p>
+            </article>
+            <article className="glass p-6 border-mint/20">
+              <h3 className="font-bold">Written interview summaries</h3>
+              <p className="muted text-sm mt-3">
+                {interviewStats.document} document-based records contain four
+                structured sets of questions and responses, preserved as
+                evidence and linked to the interview cards.
               </p>
             </article>
             <article className="glass p-6 border-mint/20">
@@ -585,27 +595,27 @@ export default function MilestoneTwo() {
             {[
               [
                 "Research snapshot",
-                `${surveyStats.total} questionnaire responses and ${interviewStats.total} interviews (${interviewStats.audio} audio, ${interviewStats.whatsapp} WhatsApp). The convenience sample is directional, not statistically representative.`,
+                `${surveyStats.total} questionnaire responses and ${interviewStats.total} interviews (${interviewStats.audio} audio, ${interviewStats.whatsapp} WhatsApp, ${interviewStats.document} written/document). The convenience sample is directional, not statistically representative.`,
               ],
               [
                 "Parking pain is real but uneven",
-                "Among 13 questionnaire respondents who drive and seek parking, 12 drove in Bucharest last week; reported driving frequency ranges from 1–2 days (5) to 5+ days (3). Interview experiences also vary: Participant 14 reported 15–20 minutes searching near university, while Participant 15 described a 6–7 minute search for public street parking and sometimes chooses the metro for busy trips.",
+                "Among 13 questionnaire respondents who drive and seek parking, 12 drove in Bucharest last week; reported driving frequency ranges from 1–2 days (5) to 5+ days (3). The 19 interviews show the same pattern: some participants search briefly, while others spend 15–45 minutes or lose time because availability is uncertain.",
               ],
               [
                 "Different trips need different options",
-                "Drivers reported monthly parking spend from 0 to over 300 lei (5 of 13 spent under 50 lei). Participant 15 pays 350 lei monthly for a private office space because fixed morning meetings make reliability important; his current arrangement is cash without a contract or receipt. For a platform, he would consider up to 450 lei only if the space is nearby, reliable, and invoice-ready. For other trips he prefers free or low-cost public parking. Participant 14 would pay for certainty on days she carries things to university. These are interview statements, not commitments to ParkX.",
+                "Drivers reported monthly parking spend from 0 to over 300 lei (5 of 13 spent under 50 lei). Interviews include monthly office parking bought for reliability, hourly payments in central areas and low-cost public parking used for other trips. Several participants would pay only for a nearby, guaranteed space, while others prefer to continue searching or use transit. These are statements, not commitments to ParkX.",
               ],
               [
                 "An unused space does not equal available supply",
-                "All 8 questionnaire respondents with a private space said they had never rented it out. Participant 15 also leaves a second basement space unused and declined a neighbor’s 250–300 lei/month offer because of contract and tax uncertainty. Other interviews describe informal rentals, so owner behavior varies and willingness to list cannot be assumed.",
+                "All 8 questionnaire respondents with a private space said they had never rented it out. Interview owners also described unused spots and declined or avoided rental opportunities because of contract, tax, access or trust concerns. Informal rentals exist, but owner behavior varies and willingness to list cannot be assumed.",
               ],
               [
                 "Trust, access, and paperwork block owners",
-                "The questionnaire reports mixed access setups (3 open, 3 barrier/remote, 1 key/card, 1 LPR) and mixed building rules (4 yes, 2 no, 2 unsure). Interview owners raised concerns about strangers, entry controls, overstay, and reclaiming a space. Participant 15 said he would not list his own space because the income would still need to be declared, even if a platform handled the contract.",
+                "The questionnaire reports mixed access setups (3 open, 3 barrier/remote, 1 key/card, 1 LPR) and mixed building rules (4 yes, 2 no, 2 unsure). Interview owners raised concerns about strangers, entry controls, overstay, reclaiming a space and declaring rental income. The evidence indicates that verification and paperwork support are important product requirements.",
               ],
               [
                 "Workarounds compete with paid parking",
-                "Drivers described arriving earlier, circling, using transit or ride-hailing, paying for underground lots, and searching farther away. Participant 15 chooses the metro for very congested trips and accepts a short search for public parking outside work; his paid monthly space solves a different need: predictable arrival for office meetings.",
+                "Drivers described arriving earlier, circling, using transit or ride-hailing, paying for underground lots and searching farther away. Their workarounds show that the need differs by trip: public or low-cost parking is acceptable for flexible journeys, while predictable guaranteed access is more valuable for fixed office or university schedules.",
               ],
               [
                 "Reported spend is not purchase intent",
@@ -683,7 +693,7 @@ export default function MilestoneTwo() {
               </div>
               <p className="muted text-sm mt-5">
                 Some interview participants described informal rentals, while
-                Participant 15 declined an offer because of paperwork and tax
+                others declined or avoided an offer because of paperwork and tax
                 uncertainty. Owner availability and willingness still need
                 direct validation.
               </p>
@@ -705,8 +715,8 @@ export default function MilestoneTwo() {
               public parking or transit; search difficulty and price tolerance
               vary by trip and location. For owners, an unused spot is not
               automatically rentable: 8/8 surveyed owners had never rented
-              theirs, and Participant 15 declined a concrete offer because the
-              paperwork and tax implications were unclear. Some interview
+              theirs, and several interview owners questioned contract or tax
+              implications. Some interview
               participants do rent informally, so owner behavior is not uniform.
               The next step is to test a specific office-area use case and a
               simple, trusted owner process with real reservations or deposits;
@@ -731,7 +741,7 @@ export default function MilestoneTwo() {
               ],
               [
                 "Evidence",
-                "The questionnaire recorded 13 driver respondents with varied spend and 8 of 8 surveyed private-space owners who had never rented out their spot. Interviews include informal rentals, but Participant 15 declined a neighbor’s concrete 250–300 lei/month offer over paperwork and tax uncertainty. A distinct office-commuter use case emerged: a guaranteed nearby space with an invoice.",
+                "The questionnaire recorded 13 driver respondents with varied spend and 8 of 8 surveyed private-space owners who had never rented out their spot. Interviews include informal rentals and several owner concerns about contracts and taxes. A distinct fixed-schedule use case also emerged: a guaranteed nearby space with verifiable payment.",
               ],
               [
                 "After / decision",
@@ -766,8 +776,8 @@ export default function MilestoneTwo() {
               {[
                 ["Yes — problem is confirmed", "Multiple drivers independently described recent, costly parking searches and workarounds without being pitched ParkX first."],
                 ["Yes — first narrow use cases exist", "Possible use cases include guaranteed evening parking near a destination, daytime monthly rentals for unused residential spaces, and dense areas such as Regie or hospital districts."],
-                ["Not yet — supply constraints", "All 8 surveyed private-space owners had never rented out their spot. Participant 15 declined a neighbor’s offer because contract and tax questions were unclear; other owners raised access, trust, and building-rule concerns."],
-                ["Not yet — no ParkX payment commitment", "Participant 15 currently pays for office parking and described conditions for paying more, but that is not a ParkX booking. Survey spending and interview price statements are not deposits, pre-orders, or live bookings."],
+                ["Not yet — supply constraints", "All 8 surveyed private-space owners had never rented out their spot. Interview owners raised contract, tax, access, trust and building-rule concerns."],
+                ["Not yet — no ParkX payment commitment", "Interview and survey statements describe existing parking behavior and stated preferences, but none is a ParkX booking. Survey spending and interview price statements are not deposits, pre-orders or live bookings."],
               ].map(([title, text]) => (
                 <div key={title} className="rounded-xl bg-white/[.035] p-4">
                   <h3 className="font-semibold text-sm">{title}</h3>
@@ -789,7 +799,7 @@ export default function MilestoneTwo() {
           <SectionHeading
             tag="Supporting evidence"
             title="Evidence and research records"
-            desc="Each card links the interview metadata to audio or WhatsApp screenshots, the PDF transcript, and an on-page transcript."
+            desc="Each card links the available interview evidence: audio, WhatsApp screenshots or written notes, PDFs and an on-page summary."
           />
           <div className="mt-6 flex items-center justify-between gap-4">
             <button

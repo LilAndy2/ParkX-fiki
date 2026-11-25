@@ -444,6 +444,122 @@ Andrei L.: Izolat? Ania: Izolat, da, scuze. La mine la facultate, acum unde parc
 Ania: Da. Și asta, dar de exemplu în unele zile nu stau așa de mult la facultate. Să zici că vin la un curs, două. Singurele chestii care mă bat pe mine sunt zilele în care am atelierul, în care da, stau mai mult. Aș avea chestii de cărat și mi-e mai comod să vin cu mașina decât să le car cu metroul. Andrei L.: În regulă. Cam atât am avut să te întreb. Îți mulțumesc pentru timpul acordat. Ania: Mulțumesc și eu că m-ai ascultat.`,
   },
   {
+    id: "I-Ioana-1",
+    displayName: "Ioana - Participant 1",
+    method: "document",
+    segment: "Driver — uses the car for personal and work trips",
+    side: "driver",
+    interviewer: "Ioana",
+    audio: "/evidence/m2/Conversatii Audio/Ioana/WhatsApp Audio 2026-11-21 at 12.19.44.mp4",
+    pdf: "/evidence/m2/Conversatii Audio/Ioana/Intrebari_si_rasp_Ioana.pdf",
+    screenshots: [
+      "/evidence/m2/Conversatii Audio/Ioana/WhatsApp Image 2026-11-21 at 12.19.08.jpeg",
+      "/evidence/m2/Conversatii Audio/Ioana/WhatsApp Image 2026-11-21 at 12.19.08 (2).jpeg",
+      "/evidence/m2/Conversatii Audio/Ioana/WhatsApp Image 2026-11-21 at 12.19.08 (3).jpeg",
+    ],
+    highlights: [
+      "Uses the car permanently for personal and work purposes.",
+      "The latest parking difficulty was on Bd. Dacia, where legal spaces were insufficient for demand.",
+      "Last week she mainly parked in yards and spent little time searching.",
+      "Her worst experience was a wheel clamp: she waited about 30 minutes for release and received a fine.",
+    ],
+    transcript: `1. Folosește mașina permanent, în scopuri personale și de serviciu.
+
+2. Ieri, pe Bd. Dacia, erau prea multe mașini față de numărul de locuri legale. O mașină a fost blocată de un alt vehicul.
+
+3. În ultima săptămână a parcat mai mult prin curți și nu a pierdut prea mult timp căutând loc.
+
+4. Poliția i-a blocat roata, a așteptat aproximativ 30 de minute să fie deblocată și a primit amendă.
+
+5. Când nu găsește loc, parchează pe un loc neamenajat sau blochează pe cineva. În 90% dintre situații folosește locuri cu plată.
+
+6. Joi, 19.11, în Sectorul 4 a plătit pentru o oră. Miercuri, 18.11, la Ploiești a plătit 6 lei/oră și 10 lei pentru doar 10 minute de staționare.`,
+  },
+  {
+    id: "I-Ioana-2",
+    displayName: "Ioana - Participant 2",
+    method: "document",
+    segment: "Driver — parks daily and uses unofficial spaces when in a hurry",
+    side: "driver",
+    interviewer: "Ioana",
+    audio: null,
+    pdf: "/evidence/m2/Conversatii Audio/Ioana/Intrebari_si_rasp_Ioana.pdf",
+    screenshots: [],
+    highlights: [
+      "Uses the car daily and does not usually use another form of transport.",
+      "At a recent wedding in Obor, she searched for about 45 minutes in a residential area.",
+      "When hurried, she parks anywhere, even if the space is not designated.",
+      "In a tight underground spot near Piața Romană, she scraped the side of the car against the wall.",
+    ],
+    transcript: `1. Folosește mașina zilnic și nu folosește alt mijloc de transport.
+
+2. La ultima nuntă din Obor s-a deplasat aproximativ 45 de minute prin cartier, unde erau aproape exclusiv locuri rezidențiale.
+
+3. Aproximativ o oră în total. Când se grăbește, parchează oriunde, indiferent dacă locul este amenajat sau nu.
+
+4. A avut întâlnire la un hotel din Piața Romană. Era în întârziere și a parcat într-un loc foarte strâmt dintr-o parcare subterană, zăgrând mașina de zid.
+
+5. Lasă mașina pe avarii când trebuie să nu blocheze traficul ori lasă numărul de telefon dacă blochează o altă mașină.
+
+6. Joi, 19.11, în Sectorul 1 a staționat două ore și a plătit 1,27 EUR/oră prin SMS.`,
+  },
+  {
+    id: "I-Ioana-3",
+    displayName: "Ioana - Participant 3",
+    method: "document",
+    segment: "Driver — work and personal travel, 4–5 days per week",
+    side: "driver",
+    interviewer: "Ioana",
+    audio: null,
+    pdf: "/evidence/m2/Conversatii Audio/Ioana/Intrebari_si_rasp_Ioana.pdf",
+    screenshots: [],
+    highlights: [
+      "Uses the car 4–5 times per week for work and personal purposes.",
+      "Had to pay a porter to raise a barrier and enter an institution's parking area.",
+      "Left a haircut appointment halfway through to move a car parked on someone else's spot.",
+      "After parking in another person's place, cooking oil was poured onto the car.",
+    ],
+    transcript: `1. Folosește mașina de 4–5 ori pe săptămână pentru serviciu și interes personal.
+
+2. Vineri, 20.11, a trebuit să plătească portarul pentru ridicarea barierei ca să poată intra în parcarea instituției, deoarece în exterior nu existau locuri.
+
+3. Joi, 19.11, s-a dus la tunsoare și a trebuit să iasă din mijlocul programării pe jumătate tunsoare pentru a muta mașina parcată pe locul altcuiva.
+
+4. Pentru că a parcat pe locul altcuiva, i-a fost turnat ulei de gătit pe mașină.
+
+5. Când nu găsește un loc, blochează pe cineva și lasă numărul de telefon.
+
+6. Recent a parcat în parcările mall-urilor și la Primărie, în Sectorul 1, timp de aproximativ patru ore.`,
+  },
+  {
+    id: "I-Ioana-4",
+    displayName: "Ioana - Participant 4",
+    method: "document",
+    segment: "Driver — weekly travel for work, shopping and personal needs",
+    side: "driver",
+    interviewer: "Ioana",
+    audio: null,
+    pdf: "/evidence/m2/Conversatii Audio/Ioana/Intrebari_si_rasp_Ioana.pdf",
+    screenshots: [],
+    highlights: [
+      "Uses the car weekly for work, shopping and personal purposes.",
+      "Once carried heavy luggage from a distant parking spot because no nearby place was available.",
+      "Leaves the car anywhere and reports parking incidents only in exceptional cases.",
+      "Most recently parked for one hour in Sector 6.",
+    ],
+    transcript: `1. Folosește mașina săptămânal pentru serviciu, cumpărături și interes personal.
+
+2. Duminică, 15.11, avea bagaje grele și a parcat foarte departe deoarece nu existau locuri în apropiere.
+
+3. A ales locuri improvizate în aproximativ 70% din situații.
+
+4. Lasă mașina oriunde și până acum nu a avut incidente nefericite.
+
+5. Când nu găsește loc, blochează pe cineva și lasă numărul de telefon.
+
+6. Săptămâna trecută a staționat o oră în Sectorul 6.`,
+  },
+  {
     id: "A-Alex",
     displayName: "Alex",
     method: "audio",
@@ -467,6 +583,7 @@ export const interviewStats = {
   total: interviews.length,
   audio: interviews.filter((i) => i.method === "audio").length,
   whatsapp: interviews.filter((i) => i.method === "whatsapp").length,
+  document: interviews.filter((i) => i.method === "document").length,
   drivers: interviews.filter((i) => i.side === "driver" || i.side === "both").length,
   owners: interviews.filter((i) => i.side === "owner" || i.side === "both").length,
   both: interviews.filter((i) => i.side === "both").length,
